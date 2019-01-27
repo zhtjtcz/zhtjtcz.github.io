@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>【USACO】修建草坪-单调队列优化DP | Marvolo</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="梦想随我，分数归你">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="【USACO】修建草坪-单调队列优化DP | Marvolo">
+    <meta name="twitter:description" content="梦想随我，分数归你">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="【USACO】修建草坪-单调队列优化DP | Marvolo">
+    <meta property="og:description" content="梦想随我，分数归你">
+
+    
+    <meta name="author" content="Marvolo">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Marvolo" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://yoursite.com/2017/01/24/【USACO】修建草坪-单调队列优化DP/"/>
+
+    
+      
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/Night.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Marvolo 的主页"><img src="/images/HeadPhoto.png" width="80" alt="Marvolo logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Marvolo">Marvolo</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Just for Dream</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">梦想随我，分数归你</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/Friend">Friend</a></li>
+            
+              <li class="navigation__item"><a href="/About">About</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/zhtjtcz" title="查看我的GitHub主页" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/zhtjtcz" title="上Twitter找我" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-01-24T08:32:55.000Z" class="post-list__meta--date date">2017-01-24</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/DP/">DP</a>, <a class="tag-link" href="/tags/USACO/">USACO</a>, <a class="tag-link" href="/tags/单调队列/">单调队列</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">【USACO】修建草坪-单调队列优化DP</h1>
+  </header>
+
+  <section class="post">
+    <p>给定一个长度为N的数列，求最大子序列和，子序列长度不超过K。</p>
+<a id="more"></a>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>单调队列优化DP裸题。</p>
+<p>首先有f[i]=max(f[i],f[j]+H(j+2,i))。f[i]为选第i个元素的最大值。因为要满足要求，所以第j+1个元素必须不选。因为H(j+2,i)=sum[i]-sum[j+1],而sum[i]为定值，所以只需判断f[j]-sum[j+1]的值。而因为选择是间断性的，所以f[j]-sum[j+1]单调递减。每次维护一个队列z，从头到尾序号递增，f[z[k]]-sum[z[k]+1]递减，每次先将所有不符合题意的出队，然后从队首取出元素来转移，再将f[i-1]-sum[i]放入队尾即可。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100010</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,i,head,tail,k;</span><br><span class="line">LL a[N],z[N];</span><br><span class="line">LL b[N],f[N];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> p=<span class="number">0</span>;	<span class="keyword">char</span> c=getchar();</span><br><span class="line">	<span class="keyword">while</span> (c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)	c=getchar();</span><br><span class="line">	<span class="keyword">while</span> (c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)	p=(p&lt;&lt;<span class="number">1</span>)+(p&lt;&lt;<span class="number">3</span>)+c<span class="number">-48</span>,c=getchar();</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	n=read();	k=read();</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		a[i]=read();	b[i]=b[i<span class="number">-1</span>]+a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	z[<span class="number">0</span>]=<span class="number">-1</span>;	head=<span class="number">0</span>;	tail=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=k;i++)&#123;</span><br><span class="line">		f[i]=b[i];</span><br><span class="line">		<span class="keyword">while</span> (f[i<span class="number">-1</span>]-b[i]&gt;f[z[tail]]-b[z[tail]+<span class="number">1</span>]&amp;&amp;head&lt;=tail)	tail--;</span><br><span class="line">		z[++tail]=i<span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i=k+<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">while</span> (i-z[head]<span class="number">-1</span>&gt;k)	head++;</span><br><span class="line">		<span class="keyword">if</span> (i&lt;=k)	f[i]=b[i];	<span class="keyword">else</span></span><br><span class="line">		f[i]=f[z[head]]+b[i]-b[z[head]+<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">while</span> (f[i<span class="number">-1</span>]-b[i]&gt;f[z[tail]]-b[z[tail]+<span class="number">1</span>]&amp;&amp;head&lt;=tail)	tail--;</span><br><span class="line">		z[++tail]=i<span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,f[n]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h1><p><a href="http://218.28.19.228/cogs/problem/problem.php?pid=773" target="_blank" rel="noopener">COGS</a></p>
+<p>[BZOJ](<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2442" target="_blank" rel="noopener">http://www.lydsy.com/JudgeOnline/problem.php?id=2442</a></p>
+
+  </section>
+
+</article>
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/01/24/【ZJOI2006】物流运输-最短路+DP/" title="【ZJOI2006】物流运输-最短路+DP">【ZJOI2006】物流运输-最短路+DP</a></h2>
+                <p class="excerpt">
+                
+                有一个无向图，每条边有一个边权，有一些点在一些时间段中无法通过。现在要在N天内每天找到一条从1号点到N号点的路径，每一次修改路径，也就是和前一天的路径不同，都需要付出一定的代价。求完成任务的最小花费。
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-01-24T08:33:36.000Z" class="post-list__meta--date date">2017-01-24</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/BZOJ/">BZOJ</a>, <a class="tag-link" href="/tags/DP/">DP</a>, <a class="tag-link" href="/tags/ZJOI/">ZJOI</a>, <a class="tag-link" href="/tags/最短路/">最短路</a>
+</span><a class="btn-border-small" href="/2017/01/24/【ZJOI2006】物流运输-最短路+DP/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/01/24/Prufre-数列学习笔记/" title="Prufer 数列学习笔记">Prufer 数列学习笔记</a></h2>
+                <p class="excerpt">
+                
+                Prufer 数列学习笔记例题给定一棵节点数已知的树，给定一些节点的度数要求，求有多少满足条件的不同形态的数。
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-01-24T08:32:24.000Z" class="post-list__meta--date date">2017-01-24</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/BZOJ/">BZOJ</a>, <a class="tag-link" href="/tags/HNOI/">HNOI</a>, <a class="tag-link" href="/tags/Prufer数列/">Prufer数列</a>, <a class="tag-link" href="/tags/代码模板/">代码模板</a>, <a class="tag-link" href="/tags/学习笔记/">学习笔记</a>, <a class="tag-link" href="/tags/数学/">数学</a>
+</span><a class="btn-border-small" href="/2017/01/24/Prufre-数列学习笔记/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+            
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2019 - 本站由 <a href="/">@Marvolo</a> 创建,
+        使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">hexo-theme-new-vno</a> 主题,
+        修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+</footer>
+        </div>
+    </div>
+
+    
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    
+    </script>
+    
+</body>
+</html>

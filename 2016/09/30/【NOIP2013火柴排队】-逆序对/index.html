@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>【NOIP2013火柴排队】- 逆序对 | Marvolo</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="梦想随我，分数归你">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="【NOIP2013火柴排队】- 逆序对 | Marvolo">
+    <meta name="twitter:description" content="梦想随我，分数归你">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="【NOIP2013火柴排队】- 逆序对 | Marvolo">
+    <meta property="og:description" content="梦想随我，分数归你">
+
+    
+    <meta name="author" content="Marvolo">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Marvolo" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://yoursite.com/2016/09/30/【NOIP2013火柴排队】-逆序对/"/>
+
+    
+      
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/Night.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Marvolo 的主页"><img src="/images/HeadPhoto.png" width="80" alt="Marvolo logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Marvolo">Marvolo</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Just for Dream</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">梦想随我，分数归你</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/Friend">Friend</a></li>
+            
+              <li class="navigation__item"><a href="/About">About</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/zhtjtcz" title="查看我的GitHub主页" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/zhtjtcz" title="上Twitter找我" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2016-09-30T13:27:52.000Z" class="post-list__meta--date date">2016-09-30</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/NOIP/">NOIP</a>, <a class="tag-link" href="/tags/数学/">数学</a>, <a class="tag-link" href="/tags/逆序对/">逆序对</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">【NOIP2013火柴排队】- 逆序对</h1>
+  </header>
+
+  <section class="post">
+    <p>有两个长度为N的数列，每个数列中元素大小各不相同。定义距离为i=1∑N (ai-bi)^2。 也就是两个数列对应项的差的平方之和。若让距离值最小，每次可以交换相邻两个元素，求最小满足条件的交换次数。</p>
+<a id="more"></a>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>首先由排序不等式知，两数列的元素都按从小到大排列时，距离值最小。然后就可以先对两个数列排序，因为距离之最小时，只需满足两个数列对应位置的元素排名相等就可以，所以可以算一下逆序对，答案即为逆序对个数。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CK 99999997</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> i,n;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"><span class="keyword">int</span> d[N],d2[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Marvolo</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">&#125;a[N],b[N],c[N];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> Marvolo a,<span class="keyword">const</span> Marvolo b)</span></span>&#123;<span class="keyword">return</span> (a.x&lt;b.x);&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> p=<span class="number">0</span>;	<span class="keyword">char</span> c=getchar();</span><br><span class="line">	<span class="keyword">while</span> (c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)	c=getchar();</span><br><span class="line">	<span class="keyword">while</span> (c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)	p=p*<span class="number">10</span>+c<span class="number">-48</span>,c=getchar();</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> q=low,mid=(low+high)&gt;&gt;<span class="number">1</span>,e=low,w=((low+high)&gt;&gt;<span class="number">1</span>)+<span class="number">1</span>,k=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (low==high)	<span class="keyword">return</span>;</span><br><span class="line">	Merge(low,mid);	Merge(mid+<span class="number">1</span>,high);</span><br><span class="line">	<span class="keyword">while</span> (q&lt;=mid&amp;&amp;w&lt;=high)	<span class="keyword">if</span> (d[q]&lt;=d[w])	d2[e++]=d[q++];	<span class="keyword">else</span> &#123;</span><br><span class="line">		d2[e++]=d[w++];	ans=(ans+mid-q+<span class="number">1</span>)%CK;&#125;</span><br><span class="line">	<span class="keyword">while</span> (q&lt;=mid)	d2[e++]=d[q++];</span><br><span class="line">	<span class="keyword">while</span> (w&lt;=high)	d2[e++]=d[w++];</span><br><span class="line">	<span class="keyword">for</span> (k=low;k&lt;=high;k++)	d[k]=d2[k];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	n=read();</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	a[i].x=read(),a[i].y=i;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	b[i].x=read(),b[i].y=i;</span><br><span class="line">	sort(a+<span class="number">1</span>,a+<span class="number">1</span>+n,cmp);	sort(b+<span class="number">1</span>,b+<span class="number">1</span>+n,cmp);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	d[a[i].y]=b[i].y;</span><br><span class="line">	Merge(<span class="number">1</span>,n);	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h1><p><a href="http://218.28.19.228/cogs/problem/problem.php?pid=1438" target="_blank" rel="noopener">COGS</a></p>
+
+  </section>
+
+</article>
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2016/09/30/【NOIP2013花匠】-DP/" title="【NOIP2013花匠】- DP">【NOIP2013花匠】- DP</a></h2>
+                <p class="excerpt">
+                
+                花匠栋栋种了一排花，每株花都有自己的高度。花儿越长越大，也越来越挤。栋栋决定把这排中的一部分花移走，将剩下的留在原地，使得剩下的花能有空间长大，同时，栋栋希望剩下的花排列得比较别致。具体而言，栋栋的花的高度可以看成一列整数h_1, h_2, … , h_n。设当一部分花被移走后，剩下的花的高度依次为g_1, g_2, … , g_m，则栋栋希望下面两个条件中至少有一个满足：条件 A：对于所有的1
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2016-09-30T13:29:13.000Z" class="post-list__meta--date date">2016-09-30</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/DP/">DP</a>, <a class="tag-link" href="/tags/NOIP/">NOIP</a>
+</span><a class="btn-border-small" href="/2016/09/30/【NOIP2013花匠】-DP/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2016/09/30/【NOI2015寿司晚宴】-状压DP/" title="【NOI2015寿司晚宴】- 状压DP">【NOI2015寿司晚宴】- 状压DP</a></h2>
+                <p class="excerpt">
+                
+                已知有2~N这些数组成一个集合，有两个人从这个数字集合中各选出一个子集(可以为空)，若两个人子集元素中满足a∈A,b∈B,都有gcd(a,b)=1，则称这种方案是和谐的。求所有和谐的方案数。
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2016-09-30T13:25:07.000Z" class="post-list__meta--date date">2016-09-30</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/BZOJ/">BZOJ</a>, <a class="tag-link" href="/tags/DP/">DP</a>, <a class="tag-link" href="/tags/NOI/">NOI</a>, <a class="tag-link" href="/tags/数学/">数学</a>
+</span><a class="btn-border-small" href="/2016/09/30/【NOI2015寿司晚宴】-状压DP/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+            
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2019 - 本站由 <a href="/">@Marvolo</a> 创建,
+        使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">hexo-theme-new-vno</a> 主题,
+        修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+</footer>
+        </div>
+    </div>
+
+    
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    
+    </script>
+    
+</body>
+</html>

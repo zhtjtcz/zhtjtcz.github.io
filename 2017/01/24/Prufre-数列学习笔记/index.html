@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>Prufer 数列学习笔记 | Marvolo</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="梦想随我，分数归你">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Prufer 数列学习笔记 | Marvolo">
+    <meta name="twitter:description" content="梦想随我，分数归你">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Prufer 数列学习笔记 | Marvolo">
+    <meta property="og:description" content="梦想随我，分数归你">
+
+    
+    <meta name="author" content="Marvolo">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Marvolo" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://yoursite.com/2017/01/24/Prufre-数列学习笔记/"/>
+
+    
+      
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/Night.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Marvolo 的主页"><img src="/images/HeadPhoto.png" width="80" alt="Marvolo logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Marvolo">Marvolo</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Just for Dream</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">梦想随我，分数归你</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/Friend">Friend</a></li>
+            
+              <li class="navigation__item"><a href="/About">About</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/zhtjtcz" title="查看我的GitHub主页" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/zhtjtcz" title="上Twitter找我" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-01-24T08:32:24.000Z" class="post-list__meta--date date">2017-01-24</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/BZOJ/">BZOJ</a>, <a class="tag-link" href="/tags/HNOI/">HNOI</a>, <a class="tag-link" href="/tags/Prufer数列/">Prufer数列</a>, <a class="tag-link" href="/tags/代码模板/">代码模板</a>, <a class="tag-link" href="/tags/学习笔记/">学习笔记</a>, <a class="tag-link" href="/tags/数学/">数学</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">Prufer 数列学习笔记</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="Prufer-数列学习笔记"><a href="#Prufer-数列学习笔记" class="headerlink" title="Prufer 数列学习笔记"></a>Prufer 数列学习笔记</h1><h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>给定一棵节点数已知的树，给定一些节点的度数要求，求有多少满足条件的不同形态的数。</p>
+<a id="more"></a>
+<p>这道题用到了<strong>Prufer数列</strong>。该数列是对无根树的一个转化。一个N个节点有标号的树通过这种转化可以变成N-2位的Prufer编码。</p>
+<h1 id="Prufer-数列的转化"><a href="#Prufer-数列的转化" class="headerlink" title="Prufer 数列的转化"></a>Prufer 数列的转化</h1><p>有这样一棵树：<br><img src="http://images.cnitblog.com/blog/426257/201308/23192743-6a0057f7d9ae4f87a5011e255c9e0794.png" alt="树1"></p>
+<p>  Prufer 数列的转化规则是：从度数为1的节点中选出编号最小的，将与它连接的节点加入到数列中。例如，上面这棵树的Prufer数列为1 2 2。</p>
+<p>  容易看出，一棵树有唯一的prufer数列。</p>
+<p>  下面是如何将prufer数列转化为一棵树。</p>
+<p>  首先将所有点的度数赋值为1，然后加上它们在数列中出现的次数，得到它们的度数。</p>
+<p>  在第i步，从度数为1的点中选出标号最小的点，然后与数列中第i个点连边。执行n-2步，剩余的两个点连边，最后得到一棵树。</p>
+<h1 id="Prufer数列的应用"><a href="#Prufer数列的应用" class="headerlink" title="Prufer数列的应用"></a>Prufer数列的应用</h1><p>从上面的过程易知，一个点的度数减一就是它在数列中出现了几次。所以可以利用这个性质构造出树。</p>
+<p>定义 <script type="math/tex">sum=\sum_{i=1}^{cnt}(d[i]-1)</script></p>
+<p>其中，cnt为有度数限制的点的数量，d[i]为点的度数限制。</p>
+<p>所以，这Sum个数在数列中的出现次数为</p>
+<script type="math/tex; mode=display">C_{n-2}^{sum}*\frac{sum!}{\prod_{i=1}^{cnt}(d[i]-1)}</script><p>其余所有数的出现次数为</p>
+<script type="math/tex; mode=display">(n-cnt)^{n-2-sum}</script><p>所以总的情况化简得</p>
+<script type="math/tex; mode=display">\frac{(n-2)!}{(n-2-sum)!*\prod_{i=1}^{cnt}(d[i]-1)!}</script><p>具体的计算可以用高精度。如果不想写高精度除法可以写约分。至于无解的情况比较好判断，具体见代码。</p>
+<p>综上所述，此题完美解决。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CK 10000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> i,n,sum,cnt;</span><br><span class="line"><span class="keyword">bool</span> v[N];</span><br><span class="line"><span class="keyword">int</span> a[N],p[N],z[N],s[N];</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">High</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="keyword">int</span> len;</span><br><span class="line">		<span class="keyword">int</span> s[<span class="number">5030</span>];</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;len=<span class="number">1</span>;	<span class="built_in">memset</span>(s,<span class="number">0</span>,<span class="keyword">sizeof</span>(s));&#125;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;<span class="built_in">printf</span>(<span class="string">"%d"</span>,s[len<span class="number">-1</span>]);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i=len<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)	<span class="built_in">printf</span>(<span class="string">"%.4d"</span>,s[i]);</span><br><span class="line">				<span class="built_in">putchar</span>(<span class="number">10</span>);	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">High ans;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">IF</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	<span class="keyword">if</span> (a[i]==<span class="number">0</span>)	<span class="keyword">goto</span> E;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	sum+=(a[i]==<span class="number">-1</span>)?<span class="number">0</span>:a[i]<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span> (sum&gt;n<span class="number">-2</span>)	<span class="keyword">goto</span> E;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">	E:	<span class="built_in">printf</span>(<span class="string">"0\n"</span>);	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">MakeTable</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,t=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (v[i])	<span class="keyword">continue</span>;</span><br><span class="line">		p[++p[<span class="number">0</span>]]=i;	t=i;</span><br><span class="line">		<span class="keyword">while</span> (t&lt;=n)&#123;v[t]=<span class="number">1</span>;	t+=i;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">inline</span> High <span class="keyword">operator</span> *(High x,<span class="keyword">int</span> y)&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;x.len;i++)	x.s[i]*=y;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;x.len||x.s[i]&gt;<span class="number">0</span>;i++)&#123;</span><br><span class="line">		x.s[i+<span class="number">1</span>]+=x.s[i]/CK;	x.s[i]%=CK;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (x.len&lt;i)	x.len=i;</span><br><span class="line">	<span class="keyword">while</span> (x.len&gt;<span class="number">0</span>&amp;&amp;x.s[x.len<span class="number">-1</span>]==<span class="number">0</span>)	x.len--;</span><br><span class="line">	<span class="keyword">if</span> (!x.len)	x.len=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Work</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,t=<span class="number">0</span>,j=<span class="number">0</span>;	sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	sum+=(a[i]==<span class="number">-1</span>)?<span class="number">0</span>:a[i]<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span> (sum==<span class="number">0</span>)	<span class="keyword">goto</span> END;</span><br><span class="line">	<span class="keyword">for</span> (i=n<span class="number">-2</span>;i&gt;n<span class="number">-2</span>-sum;i--)	z[++z[<span class="number">0</span>]]=i;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	<span class="keyword">if</span> (a[i])	<span class="keyword">for</span> (j=<span class="number">1</span>;j&lt;=a[i]<span class="number">-1</span>;j++)	s[++s[<span class="number">0</span>]]=j;</span><br><span class="line">	MakeTable();</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=p[<span class="number">0</span>];i++)&#123;</span><br><span class="line">		t=p[i];	cnt=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (j=<span class="number">1</span>;j&lt;=s[<span class="number">0</span>];j++)</span><br><span class="line">		<span class="keyword">while</span> (s[j]%t==<span class="number">0</span>&amp;&amp;s[j]&gt;<span class="number">0</span>)	cnt++,s[j]/=t;</span><br><span class="line">		<span class="keyword">for</span> (j=<span class="number">1</span>;j&lt;=z[<span class="number">0</span>];j++)</span><br><span class="line">		<span class="keyword">while</span> (cnt&amp;&amp;z[j]%t==<span class="number">0</span>&amp;&amp;z[j]&gt;<span class="number">0</span>)	cnt--,z[j]/=t;</span><br><span class="line">	&#125;</span><br><span class="line">	END:</span><br><span class="line">		cnt=<span class="number">0</span>;	ans.clear();	ans.s[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	<span class="keyword">if</span> (a[i]&gt;<span class="number">0</span>)	cnt++;</span><br><span class="line">		<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=z[<span class="number">0</span>];i++)	<span class="keyword">if</span> (z[i])	ans=ans*z[i];</span><br><span class="line">		<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n<span class="number">-2</span>-sum;i++)	ans=ans*(n-cnt);</span><br><span class="line">	ans.write();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	<span class="keyword">if</span> (n==<span class="number">1</span>&amp;&amp;(a[<span class="number">1</span>]==<span class="number">0</span>||a[<span class="number">1</span>]==<span class="number">-1</span>))	&#123;<span class="built_in">printf</span>(<span class="string">"1\n"</span>);	<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line">	IF();	Work();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h1><p><a href="http://218.28.19.228/cogs/problem/problem.php?pid=1663" target="_blank" rel="noopener">COGS</a></p>
+<p><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1005" target="_blank" rel="noopener">BZOJ</a></p>
+
+  </section>
+
+</article>
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/01/24/【USACO】修建草坪-单调队列优化DP/" title="【USACO】修建草坪-单调队列优化DP">【USACO】修建草坪-单调队列优化DP</a></h2>
+                <p class="excerpt">
+                
+                给定一个长度为N的数列，求最大子序列和，子序列长度不超过K。
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-01-24T08:32:55.000Z" class="post-list__meta--date date">2017-01-24</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/DP/">DP</a>, <a class="tag-link" href="/tags/USACO/">USACO</a>, <a class="tag-link" href="/tags/单调队列/">单调队列</a>
+</span><a class="btn-border-small" href="/2017/01/24/【USACO】修建草坪-单调队列优化DP/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/01/24/【HNOI2008】-玩具装箱-斜率优化DP/" title="【HNOI2008】  玩具装箱-斜率优化DP">【HNOI2008】  玩具装箱-斜率优化DP</a></h2>
+                <p class="excerpt">
+                
+                有编号为1…N的N件玩具，第i件玩具长度为Ci。现在要把这些玩具放在一些一维容器中。要求在同一个一维容器中的玩具编号是连续的。同时如果一个一维容器中有多个玩具，那么两件玩具之间要加入一个单位长度的填充物。形式地说如果将第i件玩具到第j个玩具放到一个容器中，那么容器的长度将为 x=j-i+Sigma(Ck) i&amp;lt;=K&amp;lt;=j 。
+制作容器的费用与容器的长度有关，如果容器长度为x,其制作费用为(X-L)^2.其中L是一个常量。P教授不关心容器的数目，他可以制作出任意长度的容器，甚至超过L。但他希望费用最小。求最小费用。
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-01-24T08:31:42.000Z" class="post-list__meta--date date">2017-01-24</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/BZOJ/">BZOJ</a>, <a class="tag-link" href="/tags/DP/">DP</a>, <a class="tag-link" href="/tags/HNOI/">HNOI</a>, <a class="tag-link" href="/tags/斜率优化/">斜率优化</a>
+</span><a class="btn-border-small" href="/2017/01/24/【HNOI2008】-玩具装箱-斜率优化DP/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+            
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2019 - 本站由 <a href="/">@Marvolo</a> 创建,
+        使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">hexo-theme-new-vno</a> 主题,
+        修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+</footer>
+        </div>
+    </div>
+
+    
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    
+    </script>
+    
+</body>
+</html>

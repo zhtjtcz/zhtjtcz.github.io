@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>【网络流24题】最长递增子序列-最大流 | Marvolo</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="梦想随我，分数归你">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="【网络流24题】最长递增子序列-最大流 | Marvolo">
+    <meta name="twitter:description" content="梦想随我，分数归你">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="【网络流24题】最长递增子序列-最大流 | Marvolo">
+    <meta property="og:description" content="梦想随我，分数归你">
+
+    
+    <meta name="author" content="Marvolo">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Marvolo" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://yoursite.com/2017/01/25/【网络流24题】最长递增子序列-最大流/"/>
+
+    
+      
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/Night.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Marvolo 的主页"><img src="/images/HeadPhoto.png" width="80" alt="Marvolo logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Marvolo">Marvolo</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Just for Dream</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">梦想随我，分数归你</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/Friend">Friend</a></li>
+            
+              <li class="navigation__item"><a href="/About">About</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/zhtjtcz" title="查看我的GitHub主页" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/zhtjtcz" title="上Twitter找我" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-01-25T07:55:07.000Z" class="post-list__meta--date date">2017-01-25</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/最大流/">最大流</a>, <a class="tag-link" href="/tags/网络流/">网络流</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">【网络流24题】最长递增子序列-最大流</h1>
+  </header>
+
+  <section class="post">
+    <p>给定正整数序列$x<em>{1}$,…, $x</em>{n}$。<br>（1）计算其最长递增子序列的长度s。<br>（2）计算从给定的序列中最多可取出多少个长度为s的递增子序列。<br>（3）如果允许在取出的序列中多次使用$x<em>{1}$和$x</em>{n}$，则从给定序列中最多可取出多少个长度为$s$的递增子序列。</p>
+<a id="more"></a>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>对于第一问，首先可以用DP解决,求出最长的递增子序列长度$L$。</p>
+<p>对于第二问，要用到网络流求解。从题目条件出发，建立超级源与超级汇。定义以元素$x<em>{i}$结尾的最长不下降子序列长度为$f[x</em>{i}]$.对于所有$f[x<em>{i}]=1$的元素，连一条从源点到该点的边，流量为1.对于所有$f[x</em>{i}]=L$的元素，连一条从该点到汇点的边，流量为1.因为题目要求每个点只能用一次，所以要将每一个元素对应的点拆为左右两个点，两点间连一条流量为1的边。然后跑最大流。</p>
+<p>对于第三问，只需在第二问的基础上将源点到$x<em>{1}$的边的流量改为$+\infty$,将$x</em>{n}$到汇点的边的流量改为$+\infty$。$x<em>{1}$和$x</em>{n}$的左右分点的边的流量也改为$+\infty$，再跑最大流即可。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,i,cnt,lsum=<span class="number">1</span>,flow=<span class="number">0</span>,al,Found;</span><br><span class="line"><span class="keyword">int</span> a[N],f[N],head[N],gap[N],gaps[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Marvolo</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> t,fl,re,next;</span><br><span class="line">&#125;e[N*<span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> (a&gt;b)?a:b;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Min</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> (a&lt;b)?a:b;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> s,<span class="keyword">int</span> t,<span class="keyword">int</span> fl)</span></span>&#123;</span><br><span class="line">	e[lsum].t=t;	e[lsum].fl=fl;	e[lsum].next=head[s];	</span><br><span class="line">	e[lsum].re=lsum+<span class="number">1</span>;	head[s]=lsum++;</span><br><span class="line">	e[lsum].t=s;	e[lsum].next=head[t];</span><br><span class="line">	e[lsum].re=lsum<span class="number">-1</span>;	head[t]=lsum++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Sap</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,F=al,mingap=cnt<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span> (x==cnt)	&#123;flow+=al;	Found=<span class="number">1</span>;	<span class="keyword">return</span>;&#125;</span><br><span class="line">	<span class="keyword">for</span> (i=head[x];i;i=e[i].next)</span><br><span class="line">		<span class="keyword">if</span> (e[i].fl)&#123;</span><br><span class="line">			<span class="keyword">if</span> (gap[e[i].t]+<span class="number">1</span>==gap[x])	&#123;</span><br><span class="line">				al=Min(al,e[i].fl);	Sap(e[i].t);</span><br><span class="line">				<span class="keyword">if</span> (gap[<span class="number">1</span>]&gt;=cnt)	<span class="keyword">return</span>;</span><br><span class="line">				<span class="keyword">if</span> (Found)	<span class="keyword">break</span>;</span><br><span class="line">				al=F;</span><br><span class="line">			&#125;</span><br><span class="line">			mingap=Min(mingap,gap[e[i].t]);</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">if</span> (!Found)&#123;</span><br><span class="line">		gaps[gap[x]]--;	<span class="keyword">if</span> (!gaps[gap[x]])	gap[<span class="number">1</span>]=cnt;</span><br><span class="line">		gaps[gap[x]=mingap+<span class="number">1</span>]++;</span><br><span class="line">	&#125;	<span class="keyword">else</span> e[i].fl-=al,e[e[i].re].fl+=al;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Work1</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	f[i]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n<span class="number">-1</span>;i++)	<span class="keyword">if</span> (a[i]&lt;=a[i+<span class="number">1</span>])	<span class="keyword">goto</span> END;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"1\n%d\n%d\n"</span>,n,n);	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">	END:</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">		<span class="keyword">for</span> (j=i+<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="keyword">if</span> (a[i]&lt;=a[j])	f[j]=Max(f[j],f[i]+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	f[<span class="number">0</span>]=Max(f[<span class="number">0</span>],f[i]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,f[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Work2</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	cnt=<span class="number">1</span>+n*<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	Add((i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">2</span>,(i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">3</span>,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	<span class="keyword">if</span> (f[i]==<span class="number">1</span>)	Add(<span class="number">1</span>,(i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">2</span>,<span class="number">1</span>);	<span class="keyword">else</span> <span class="keyword">if</span> (f[i]==f[<span class="number">0</span>])</span><br><span class="line">		Add((i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">3</span>,cnt,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">		<span class="keyword">for</span> (j=i+<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="keyword">if</span> (a[i]&lt;=a[j]&amp;&amp;f[i]+<span class="number">1</span>==f[j])	Add((i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">3</span>,(j<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line">	gaps[<span class="number">0</span>]=cnt;</span><br><span class="line">	<span class="keyword">while</span> (gap[<span class="number">1</span>]&lt;cnt)&#123;</span><br><span class="line">		Found=<span class="number">0</span>;	al=INF;	Sap(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,flow);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Work3</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	flow=<span class="number">0</span>;	lsum=<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">memset</span>(e,<span class="number">0</span>,<span class="keyword">sizeof</span>(<span class="number">0</span>));	<span class="built_in">memset</span>(head,<span class="number">0</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">	<span class="built_in">memset</span>(gap,<span class="number">0</span>,<span class="keyword">sizeof</span>(gap));	<span class="built_in">memset</span>(gaps,<span class="number">0</span>,<span class="keyword">sizeof</span>(gaps));</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	Add((i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">2</span>,(i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">3</span>,<span class="number">1</span>);</span><br><span class="line">	Add(<span class="number">2</span>,<span class="number">3</span>,INF);	Add(cnt<span class="number">-2</span>,cnt<span class="number">-1</span>,INF);	Add(<span class="number">1</span>,<span class="number">2</span>,INF);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	<span class="keyword">if</span> (f[i]==<span class="number">1</span>)	Add(<span class="number">1</span>,(i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">2</span>,<span class="number">1</span>);	<span class="keyword">else</span> <span class="keyword">if</span> (f[i]==f[<span class="number">0</span>])</span><br><span class="line">		Add((i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">3</span>,cnt,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (f[n]==f[<span class="number">0</span>])	Add(cnt<span class="number">-1</span>,cnt,INF);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">		<span class="keyword">for</span> (j=i+<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="keyword">if</span> (a[i]&lt;=a[j]&amp;&amp;f[i]+<span class="number">1</span>==f[j])	Add((i<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">3</span>,(j<span class="number">-1</span>)*<span class="number">2</span>+<span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line">	gaps[<span class="number">0</span>]=cnt;</span><br><span class="line">	<span class="keyword">while</span> (gap[<span class="number">1</span>]&lt;cnt)&#123;</span><br><span class="line">		Found=<span class="number">0</span>;	al=INF;	Sap(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,flow);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	Work1();	Work2();	Work3();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="http://218.28.19.228/cogs/problem/problem.php?pid=731" target="_blank" rel="noopener">COGS</a></p>
+
+  </section>
+
+</article>
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/01/25/【网络流24题】深海机器人-费用流/" title="【网络流24题】深海机器人-费用流">【网络流24题】深海机器人-费用流</a></h2>
+                <p class="excerpt">
+                
+                给定一个P*Q的网格，网格上每条边有一个价值。现在有A个起点，B个终点。每一个起点与终点都有一个参数R，分别表示有R个人从该起点出发或到达该终点。已知每条边的价值只能被一个人采集一次，求可采集的最大价值。
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-01-25T07:56:54.000Z" class="post-list__meta--date date">2017-01-25</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/最大流/">最大流</a>, <a class="tag-link" href="/tags/费用流/">费用流</a>
+</span><a class="btn-border-small" href="/2017/01/25/【网络流24题】深海机器人-费用流/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/01/25/【NOIP2008】传纸条-费用流/" title="【NOIP2008】传纸条-费用流">【NOIP2008】传纸条-费用流</a></h2>
+                <p class="excerpt">
+                
+                有一个$N*M$的矩阵，每个位置有一个价值。现在求两条从左上角到右下角的不相交路线(原点与终点除外)，使得路径上的元素之和最大。
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-01-25T07:53:24.000Z" class="post-list__meta--date date">2017-01-25</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/DP/">DP</a>, <a class="tag-link" href="/tags/NOIP/">NOIP</a>, <a class="tag-link" href="/tags/网络流/">网络流</a>, <a class="tag-link" href="/tags/费用流/">费用流</a>
+</span><a class="btn-border-small" href="/2017/01/25/【NOIP2008】传纸条-费用流/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+            
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2019 - 本站由 <a href="/">@Marvolo</a> 创建,
+        使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">hexo-theme-new-vno</a> 主题,
+        修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+</footer>
+        </div>
+    </div>
+
+    
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    
+    </script>
+    
+</body>
+</html>
