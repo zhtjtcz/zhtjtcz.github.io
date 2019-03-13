@@ -872,11 +872,11 @@ Ans=endpos[x]*(L-minlen[x]+1)</script><p>x为当前匹配到的状态。</p>
         
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 代码模板 </tag>
             
             <tag> 学习笔记 </tag>
+            
+            <tag> 数学 </tag>
             
             <tag> BZOJ </tag>
             
