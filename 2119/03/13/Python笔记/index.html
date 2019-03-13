@@ -170,22 +170,18 @@
 <li>sep</li>
 </ol>
 <p>在输出字符串之间插入指定字符串，默认是空格</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; print(<span class="string">"a"</span>,<span class="string">"b"</span>,sep=<span class="string">"%"</span>)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"a"</span>,<span class="string">"b"</span>,sep=<span class="string">"%"</span>)</span><br></pre></td></tr></table></figure>
 <ol>
 <li><p>end</p>
 <p>在<code>print</code>输出语句的结尾加上指定字符串，默认是换行(\n)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; print(<span class="string">"a"</span>,end=<span class="string">"%"</span>)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"a"</span>,end=<span class="string">"%"</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>file</p>
 <p>将文本输入到file-like对象中，可以是文件，数据流等等，默认是sys.stdout</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; fi=open(<span class="string">'zht.out'</span>,<span class="string">'w'</span>)</span><br><span class="line">&gt; print(<span class="string">"a"</span>,file=fi)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fi=open(<span class="string">'zht.out'</span>,<span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi)</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<ol>
-<li>flush<br> flush值为True或者False，默认为Flase,表示是否立刻将输出语句输入到参数file指向的对象中<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; fi=open(<span class="string">'zht.out'</span>,<span class="string">'w'</span>)</span><br><span class="line">&gt; print(<span class="string">"a"</span>,file=fi)</span><br><span class="line">&gt; print(<span class="string">"a"</span>,file=fi,flush=<span class="keyword">True</span>)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<li><p>flush<br> flush值为True或者False，默认为Flase,表示是否立刻将输出语句输入到参数file指向的对象中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fi=open(<span class="string">'zht.out'</span>,<span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi,flush=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </blockquote>
