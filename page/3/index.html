@@ -150,7 +150,7 @@
       <h2 class="post-list__post-title post-title"><a href="/2017/01/25/【网络流24题】试题库-最大流/" title="link to post.title">【网络流24题】试题库-最大流</a></h2>
       <p class="excerpt">
     
-      假设一个试题库中有n道试题。每道试题都标明了所属类别。同一道题可能有多个类别属性。现要从题库中抽取$m$道题组成试卷。并要求试卷包含指定类型的试题。试设计一个满足要求的组卷算法。
+      假设一个试题库中有n道试题。每道试题都标明了所属类别。同一道题可能有多个类别属性。现要从题库中抽取mmm道题组成试卷。并要求试卷包含指定类型的试题。试设计一个满足要求的组卷算法。
     &hellip;
       </p>
       <div class="post-list__meta"><time datetime="2017-01-25T07:58:04.000Z" class="post-list__meta--date date">2017-01-25</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
@@ -178,7 +178,10 @@
       <h2 class="post-list__post-title post-title"><a href="/2017/01/25/【网络流24题】最长递增子序列-最大流/" title="link to post.title">【网络流24题】最长递增子序列-最大流</a></h2>
       <p class="excerpt">
     
-      给定正整数序列$x{1}$,…, $x{n}$。（1）计算其最长递增子序列的长度s。（2）计算从给定的序列中最多可取出多少个长度为s的递增子序列。（3）如果允许在取出的序列中多次使用$x{1}$和$x{n}$，则从给定序列中最多可取出多少个长度为$s$的递增子序列。
+      给定正整数序列x1x_{1}x1​,…, xnx_{n}xn​。
+（1）计算其最长递增子序列的长度s。
+（2）计算从给定的序列中最多可取出多少个长度为s的递增子序列。
+（3）如果允许在取出的序列中多次使用x1x_{1}x1​和xnx_{n}xn​，则从给定序列中最多可取出多少个长度为sss的递增子序列。
     &hellip;
       </p>
       <div class="post-list__meta"><time datetime="2017-01-25T07:55:07.000Z" class="post-list__meta--date date">2017-01-25</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
@@ -192,7 +195,7 @@
       <h2 class="post-list__post-title post-title"><a href="/2017/01/25/【NOIP2008】传纸条-费用流/" title="link to post.title">【NOIP2008】传纸条-费用流</a></h2>
       <p class="excerpt">
     
-      有一个$N*M$的矩阵，每个位置有一个价值。现在求两条从左上角到右下角的不相交路线(原点与终点除外)，使得路径上的元素之和最大。
+      有一个N∗MN*MN∗M的矩阵，每个位置有一个价值。现在求两条从左上角到右下角的不相交路线(原点与终点除外)，使得路径上的元素之和最大。
     &hellip;
       </p>
       <div class="post-list__meta"><time datetime="2017-01-25T07:53:24.000Z" class="post-list__meta--date date">2017-01-25</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
@@ -206,9 +209,12 @@
       <h2 class="post-list__post-title post-title"><a href="/2017/01/25/【网络流24题】数字梯形-费用流/" title="link to post.title">【网络流24题】数字梯形-费用流</a></h2>
       <p class="excerpt">
     
-      给定一个由n 行数字组成的数字梯形如下图所示。梯形的第一行有m个数字。从梯形的顶部的m 个数字开始，在每个数字处可以沿左下或右下方向移动，形成一条从梯形的顶至底的路径。
+      给定一个由n 行数字组成的数字梯形如下图所示。梯形的第一行有m个数字。从梯形的顶部的m 个数字开始，在每个数字处可以沿左下或右下方向移动，形成一条从梯形的顶
+至底的路径。
 
-规则1：从梯形的顶至底的m条路径互不相交。规则2：从梯形的顶至底的m条路径仅在数字结点处相交。规则3：从梯形的顶至底的m条路径允许在数字结点相交或边相交。
+规则1：从梯形的顶至底的m条路径互不相交。
+规则2：从梯形的顶至底的m条路径仅在数字结点处相交。
+规则3：从梯形的顶至底的m条路径允许在数字结点相交或边相交。
 
 对于给定的数字梯形，分别按照规则1，规则2，和规则3 计算出从梯形的顶至底的m条路径，使这m条路径经过的数字总和最大。
     &hellip;
@@ -238,9 +244,9 @@
       <h2 class="post-list__post-title post-title"><a href="/2017/01/25/【CQOI2007】余数之和sum-数学/" title="link to post.title">【CQOI2007】余数之和sum-数学</a></h2>
       <p class="excerpt">
     
-      定义函数$f(n,m)=\sum_{k=1}^{n}{m \mod k}$。给定$n$和$m$,求$f(n,m)$。
-题解将运算变形，有$m \mod k=m-[m/k]*k$。易知，当商$[m/k]$一定时，答案呈等差数列。由数学知识知，计算所有可能的商再用等差数列求和公式求和，即可得到答案。时间复杂度$O(\sqrt{m})$。
-代码123456789101112131415161718192
+      定义函数f(n,m)=∑k=1nmmod  kf(n,m)=\sum_{k=1}^{n}{m \mod k}f(n,m)=∑k=1n​mmodk。给定nnn和mmm,求f(n,m)f(n,m)f(n,m)。
+ 题解
+将运算变形，有mmod  k=m−[m/k]∗km \mod k=m-[m/k]*kmmodk=m−[m/k]∗k。易知，当商[m/k][m/k][m/k]一定时，答案呈等差数列。由数
     &hellip;
       </p>
       <div class="post-list__meta"><time datetime="2017-01-25T07:48:48.000Z" class="post-list__meta--date date">2017-01-25</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;

@@ -157,14 +157,102 @@
   </header>
 
   <section class="post">
-    <p>2177 年冬由于未知的原因，地球环境发生了连锁崩溃，人类必须在最短的时间内迁往月球。现有n个太空站位于地球与月球之间，且有m 艘公共交通太空船在其间来回穿梭。每个太空站可容纳无限多的人，而每艘太空船i 只可容纳H[i]个人。每艘太空船将周期性地停靠一系列的太空站，例如：(1，3，4)表示该太空船将周期性地停靠太空站134134134…。每一艘太空船从一个太<br>空站驶往任一太空站耗时均为1。人们只能在太空船停靠太空站(或月球、地球)时上、下船。初始时所有人全在地球上，太空船全在初始站。试设计一个算法，找出让所有人尽快地全部转移到月球上的运输方案。</p>
+    <p>2177 年冬由于未知的原因，地球环境发生了连锁崩溃，人类必须在最短的时间内迁往月球。现有n个太空站位于地球与月球之间，且有m 艘公共交通太空船在其间来回穿梭。每个太空站可容纳无限多的人，而每艘太空船i 只可容纳H[i]个人。每艘太空船将周期性地停靠一系列的太空站，例如：(1，3，4)表示该太空船将周期性地停靠太空站134134134…。每一艘太空船从一个太<br>
+空站驶往任一太空站耗时均为1。人们只能在太空船停靠太空站(或月球、地球)时上、下船。初始时所有人全在地球上，太空船全在初始站。试设计一个算法，找出让所有人尽快地全部转移到月球上的运输方案。</p>
 <a id="more"></a>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>涨姿势的一道题。</p>
+<h1 id="题解"><a class="markdownIt-Anchor" href="#题解"></a> 题解</h1>
+<p>涨姿势的一道题。</p>
 <p>可以二分，但是我选择了穷举。</p>
 <p>穷举最小的用时t，然后拆点。设立超级源和超级汇。将每一个点(除源点和汇点)拆为t+1个点，因为在0时刻有人停在地球。从地球和超级源连边，容量为无限大。从超级汇向月球连边，容量为无限大。将地球，月球，太空站拆分完之后，从上一时刻到这一时刻连边，容量无限。然后按照太空船路线，从0时刻开始，按照路径向下一时刻连边，容量为1。</p>
 <p>每一次构图之后跑网络流，当flow&gt;k时停止穷举。注意要先建一个特殊的图判断无解情况。本题难点就在建图，<strong>相当不好调！调试呕心沥血。</strong></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>``` cpp</p>
-<h1 id="include"><a href="#include" class="headerlink" title="include"></a>include<cstdio></cstdio></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include"></a>include<iostream></iostream></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include"></a>include<vector></vector></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include"></a>include<cstring></cstring></h1><h1 id="define-N-2030"><a href="#define-N-2030" class="headerlink" title="define N 2030"></a>define N 2030</h1><h1 id="define-INF-0x3f3f3f3f"><a href="#define-INF-0x3f3f3f3f" class="headerlink" title="define INF 0x3f3f3f3f"></a>define INF 0x3f3f3f3f</h1><p>using namespace std;<br>int n,m,sum,Time,cnt,Found,k=0,al,flow,i,j;<br>int p[55],s[55][55],bh[55][N];<br>int gap[N],gaps[N],l[N][N];<br>bool v[N];<br>inline void MakeMap(){<br>    int i=0,j=0,d=0,x=0,next=0;<br>    cnt=n<em>(Time+1)+1;<br>    for (i=1;i&lt;=n;i++)<br>        for (j=0;j&lt;=Time;j++)<br>            bh[i][j]=(i-1)</em>(Time+1)+1+j;<br>    for (i=0;i&lt;=Time;i++)    l[0][bh[1][i]]=INF;<br>    for (i=0;i&lt;=Time;i++)    l[bh[n][i]][cnt]=INF;<br>    for (i=1;i&lt;=n;i++)<br>        for (j=1;j&lt;=Time;j++)<br>            l[bh[i][j-1]][bh[i][j]]=INF;<br>    for (i=1;i&lt;=m;i++){<br>        if (s[i][0]==1)    continue;<br>        d=s[i][1];    next=s[i][2];    x=2;<br>        for (j=0;j&lt;=Time-1;j++){<br>            l[bh[d][j]][bh[next][j+1]]=p[i];<br>            d=next;    x=(x+1)%s[i][0];    if (x==0)    x+=s[i][0];    next=s[i][x];<br>        }<br>    }<br>}<br>inline int min(int a,int b){return (a<b)?a:b;} inline="" void="" sap(int="" x){="" int="" i="0,mingap=cnt-1,F=al;" if="" (x="=cnt)" {found="1;" flow+="al;" return;}="" for="" (i="0;i<=cnt;i++)" (l[x][i]){="" (gap[i]+1="=gap[x]){" al="min(al,l[x][i]);" sap(i);="" (gap[1]="">=cnt)    return;<br>                if (Found)    break;<br>            }<br>            mingap=min(mingap,gap[i]);<br>        }<br>    if (!Found){<br>        gaps[gap[x]]—;    if (!gaps[gap[x]])    gap[1]=cnt;<br>        gaps[gap[x]=mingap+1]++;<br>        }    else l[x][i]-=al,l[i][x]+=al;<br>}<br>inline void Write(){<br>    int i=0,j=0;<br>    for (i=0;i&lt;=cnt;i++)<br>        for (j=0;j&lt;=cnt;j++)<br>            if (l[i][j]&gt;0)    printf(“%d %d %d\n”,i,j,l[i][j]);<br>}<br>inline bool Work(){<br>    memset(gap,0,sizeof(gap));    memset(gaps,0,sizeof(gaps));<br>    memset(l,0,sizeof(l));    k=Time;    gaps[0]=cnt;<br>    MakeMap();    flow=0;<br>    //Write();<br>    while (gap[1]<cnt){ found="0;" al="INF;" sap(0);="" }="" if="" (flow="">=sum)    return 1;    else return 0;<br>}<br>inline bool Check(){<br>    int i=0,t=0,d=0,next=0,x=0,j=0;<br>    for (i=1;i&lt;=m;i++){<br>        if (s[i][0]==1)    continue;<br>        d=s[i][1];    next=s[i][2];    x=2;<br>        while (x&lt;=s[i][0]){<br>            l[d][next]=1;<br>            d=next;    x=x+1;    next=s[i][x];    if (x&gt;n)    break;<br>        }<br>        l[s[i][s[i][0]]][s[i][1]]=1;<br>    }<br>    gap[0]=t=gap[1]=1;    v[1]=1;<br>    while (t&lt;=gap[0]){<br>        for (i=1;i&lt;=n;i++)<br>        if (l[gap[t]][i]&amp;&amp;i!=gap[t])<br>            if (!v[i])    gap[++gap[0]]=i,v[i]=1;<br>        t++;<br>    }<br>    if (!v[n])    return false;    else return true;<br>}<br>int main(){<br>    scanf(“%d%d%d”,&amp;n,&amp;m,&amp;sum);</cnt){></b)?a:b;}></p>
+<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
+<pre class="highlight"><code class="cpp"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">define</span> N 2030</span>
+<span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+<span class="keyword">int</span> n,m,sum,Time,cnt,Found,k=<span class="number">0</span>,al,flow,i,j;
+<span class="keyword">int</span> p[<span class="number">55</span>],s[<span class="number">55</span>][<span class="number">55</span>],bh[<span class="number">55</span>][N];
+<span class="keyword">int</span> gap[N],gaps[N],l[N][N];
+<span class="keyword">bool</span> v[N];
+<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">MakeMap</span><span class="params">()</span></span>{
+	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,d=<span class="number">0</span>,x=<span class="number">0</span>,next=<span class="number">0</span>;
+	cnt=n*(Time+<span class="number">1</span>)+<span class="number">1</span>;
+	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)
+		<span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;=Time;j++)
+			bh[i][j]=(i<span class="number">-1</span>)*(Time+<span class="number">1</span>)+<span class="number">1</span>+j;
+	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;=Time;i++)	l[<span class="number">0</span>][bh[<span class="number">1</span>][i]]=INF;
+	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;=Time;i++)	l[bh[n][i]][cnt]=INF;
+	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)
+		<span class="keyword">for</span> (j=<span class="number">1</span>;j&lt;=Time;j++)
+			l[bh[i][j<span class="number">-1</span>]][bh[i][j]]=INF;
+	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=m;i++){
+		<span class="keyword">if</span> (s[i][<span class="number">0</span>]==<span class="number">1</span>)	<span class="keyword">continue</span>;
+		d=s[i][<span class="number">1</span>];	next=s[i][<span class="number">2</span>];	x=<span class="number">2</span>;
+		<span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;=Time<span class="number">-1</span>;j++){
+			l[bh[d][j]][bh[next][j+<span class="number">1</span>]]=p[i];
+			d=next;	x=(x+<span class="number">1</span>)%s[i][<span class="number">0</span>];	<span class="keyword">if</span> (x==<span class="number">0</span>)	x+=s[i][<span class="number">0</span>];	next=s[i][x];
+		}
+	}
+}
+<span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>{<span class="keyword">return</span> (a&lt;b)?a:b;}
+<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Sap</span><span class="params">(<span class="keyword">int</span> x)</span></span>{
+	<span class="keyword">int</span> i=<span class="number">0</span>,mingap=cnt<span class="number">-1</span>,F=al;
+	<span class="keyword">if</span> (x==cnt)	{Found=<span class="number">1</span>;	flow+=al;	<span class="keyword">return</span>;}
+	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;=cnt;i++)
+		<span class="keyword">if</span> (l[x][i]){
+			<span class="keyword">if</span> (gap[i]+<span class="number">1</span>==gap[x]){
+				al=min(al,l[x][i]);	Sap(i);
+				<span class="keyword">if</span> (gap[<span class="number">1</span>]&gt;=cnt)	<span class="keyword">return</span>;
+				<span class="keyword">if</span> (Found)	<span class="keyword">break</span>;
+			}
+			mingap=min(mingap,gap[i]);
+		}
+	<span class="keyword">if</span> (!Found){
+		gaps[gap[x]]--;	<span class="keyword">if</span> (!gaps[gap[x]])	gap[<span class="number">1</span>]=cnt;
+		gaps[gap[x]=mingap+<span class="number">1</span>]++;
+		}	<span class="keyword">else</span> l[x][i]-=al,l[i][x]+=al;
+}
+<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Write</span><span class="params">()</span></span>{
+	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;
+	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;=cnt;i++)
+		<span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;=cnt;j++)
+			<span class="keyword">if</span> (l[i][j]&gt;<span class="number">0</span>)	<span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,i,j,l[i][j]);
+}
+<span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">Work</span><span class="params">()</span></span>{
+	<span class="built_in">memset</span>(gap,<span class="number">0</span>,<span class="keyword">sizeof</span>(gap));	<span class="built_in">memset</span>(gaps,<span class="number">0</span>,<span class="keyword">sizeof</span>(gaps));
+	<span class="built_in">memset</span>(l,<span class="number">0</span>,<span class="keyword">sizeof</span>(l));	k=Time;	gaps[<span class="number">0</span>]=cnt;
+	MakeMap();	flow=<span class="number">0</span>;
+	<span class="comment">//Write();</span>
+	<span class="keyword">while</span> (gap[<span class="number">1</span>]&lt;cnt){
+		Found=<span class="number">0</span>;	al=INF;	Sap(<span class="number">0</span>);
+	}
+	<span class="keyword">if</span> (flow&gt;=sum)	<span class="keyword">return</span> <span class="number">1</span>;	<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;
+}
+<span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">Check</span><span class="params">()</span></span>{
+	<span class="keyword">int</span> i=<span class="number">0</span>,t=<span class="number">0</span>,d=<span class="number">0</span>,next=<span class="number">0</span>,x=<span class="number">0</span>,j=<span class="number">0</span>;
+	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=m;i++){
+		<span class="keyword">if</span> (s[i][<span class="number">0</span>]==<span class="number">1</span>)	<span class="keyword">continue</span>;
+		d=s[i][<span class="number">1</span>];	next=s[i][<span class="number">2</span>];	x=<span class="number">2</span>;
+		<span class="keyword">while</span> (x&lt;=s[i][<span class="number">0</span>]){
+			l[d][next]=<span class="number">1</span>;
+			d=next;	x=x+<span class="number">1</span>;	next=s[i][x];	<span class="keyword">if</span> (x&gt;n)	<span class="keyword">break</span>;
+		}
+		l[s[i][s[i][<span class="number">0</span>]]][s[i][<span class="number">1</span>]]=<span class="number">1</span>;
+	}
+	gap[<span class="number">0</span>]=t=gap[<span class="number">1</span>]=<span class="number">1</span>;	v[<span class="number">1</span>]=<span class="number">1</span>;
+	<span class="keyword">while</span> (t&lt;=gap[<span class="number">0</span>]){
+		<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)
+		<span class="keyword">if</span> (l[gap[t]][i]&amp;&amp;i!=gap[t])	
+			<span class="keyword">if</span> (!v[i])	gap[++gap[<span class="number">0</span>]]=i,v[i]=<span class="number">1</span>;
+		t++;
+	}
+	<span class="keyword">if</span> (!v[n])	<span class="keyword">return</span> <span class="literal">false</span>;	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;
+}
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;sum);</code></pre>
 
   </section>
 
@@ -180,7 +268,7 @@
                 
                 Orez的羊狼圈可以看作一个n*m个矩阵格子，这个矩阵的边缘已经装上了篱笆。Orez决定在羊狼圈中再加入一些篱笆，还是要将羊狼分开来养。
 通过仔细观察，Orez发现狼和羊都有属于自己领地，若狼和羊们不能呆在自己的领地，那它们就会变得非常暴躁，不利于他们的成长。
-Orez想要添加篱笆的尽可能的短。当然这个篱笆首先得保证不能改变狼羊的所属领地，再就是篱笆必须修筑完整，也就是说必须修建在单位格子的边界上并且不能只修建一部分。 
+Orez想要添加篱笆的尽可能的短。当然这个篱笆首先得保证不能改变狼羊的所属领地，再就是篱笆必须修筑完整，也就是说必须修建在单位格子的边界上并且不能只修建一部分。
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2016-12-17T03:47:04.000Z" class="post-list__meta--date date">2016-12-17</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;

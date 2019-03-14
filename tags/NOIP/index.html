@@ -150,7 +150,7 @@
       <h2 class="post-list__post-title post-title"><a href="/2017/01/25/【NOIP2008】传纸条-费用流/" title="link to post.title">【NOIP2008】传纸条-费用流</a></h2>
       <p class="excerpt">
     
-      有一个$N*M$的矩阵，每个位置有一个价值。现在求两条从左上角到右下角的不相交路线(原点与终点除外)，使得路径上的元素之和最大。
+      有一个N∗MN*MN∗M的矩阵，每个位置有一个价值。现在求两条从左上角到右下角的不相交路线(原点与终点除外)，使得路径上的元素之和最大。
     &hellip;
       </p>
       <div class="post-list__meta"><time datetime="2017-01-25T07:53:24.000Z" class="post-list__meta--date date">2017-01-25</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
@@ -235,7 +235,12 @@
       <h2 class="post-list__post-title post-title"><a href="/2016/09/30/【NOIP2013花匠】-DP/" title="link to post.title">【NOIP2013花匠】- DP</a></h2>
       <p class="excerpt">
     
-      花匠栋栋种了一排花，每株花都有自己的高度。花儿越长越大，也越来越挤。栋栋决定把这排中的一部分花移走，将剩下的留在原地，使得剩下的花能有空间长大，同时，栋栋希望剩下的花排列得比较别致。具体而言，栋栋的花的高度可以看成一列整数h_1, h_2, … , h_n。设当一部分花被移走后，剩下的花的高度依次为g_1, g_2, … , g_m，则栋栋希望下面两个条件中至少有一个满足：条件 A：对于所有的1
+      花匠栋栋种了一排花，每株花都有自己的高度。花儿越长越大，也越来越挤。栋栋决定把这排中的一部分花移走，将剩下的留在原地，使得剩下的花能有空间长大，同时，栋栋希望剩下的花排列得比较别致。
+具体而言，栋栋的花的高度可以看成一列整数h_1, h_2, … , h_n。设当一部分花被移走后，剩下的花的高度依次为g_1, g_2, … , g_m，则栋栋希望下面两个条件中至少有一个满足：
+条件 A：对于所有的1&amp;lt;i&amp;lt;m/2，g_2i &amp;gt; g_2i-1，且g_2i &amp;gt; g_2i+1；
+条件 B：对于所有的1&amp;lt;i&amp;lt;m/2，g_2i &amp;lt; g_2i-1，且g_2i &amp;lt; g_2i+1。
+注意上面两个条件在m = 1时同时满足，当m &amp;gt; 1时最多有一个能满足。
+请问，栋栋最多能将多少株花留在原地。
     &hellip;
       </p>
       <div class="post-list__meta"><time datetime="2016-09-30T13:29:13.000Z" class="post-list__meta--date date">2016-09-30</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
@@ -264,7 +269,7 @@
       <p class="excerpt">
     
       已知多项式方程：
-a0+a1x+a2x^2+…+an*x^n=0
+a0+a1x+a2x2+…+an*xn=0
 求这个方程在[1,m]内的整数解（n和m均为正整数）。
     &hellip;
       </p>

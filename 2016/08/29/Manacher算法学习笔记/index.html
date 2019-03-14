@@ -157,7 +157,8 @@
   </header>
 
   <section class="post">
-    <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>对于一个字符串，如果用朴素延伸比较的方法求回文串，时间复杂度最坏情况为O(N^2)，普通情况为玄学。而Manacher算法可以在O(N)的时间内解决问题。</p>
+    <h1 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h1>
+<p>对于一个字符串，如果用朴素延伸比较的方法求回文串，时间复杂度最坏情况为O(N^2)，普通情况为玄学。而Manacher算法可以在O(N)的时间内解决问题。</p>
 <a id="more"></a>
 <p>回文字符串处理的难点是处理长度，回文字符串长度可能为奇数或偶数，在这种朴素情况下比较较为繁琐。而Manacher算法提供了一种填充字符的方法，使所有回文字符串的长度皆为奇数，举个例子:</p>
 <p>原字符串: ababacd</p>
@@ -165,7 +166,8 @@
 <p>字符串长度变为了原来的两倍，但是处理变得简单，用p[i]记录i位置的最长回文字符串长度，mx表示最长回文字符串长度，id表示最长回文字符串的中心,字符数组为a，从1开始记录，伪代码如下:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=cnt<span class="number">-1</span>;i++)&#123;</span><br><span class="line">	<span class="keyword">if</span> (mx&gt;i)	p[i]=min(p[<span class="number">2</span>*id-i],mx-i);</span><br><span class="line">	<span class="keyword">else</span> p[i]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (b[i+p[i]]==b[i-p[i]])	p[i]++;</span><br><span class="line">	<span class="keyword">if</span> (p[i]+i&gt;mx)	&#123;</span><br><span class="line">		mx=p[i]+i;	id=i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>因为是回文字符串，所以满足对称性，可以先利用此性质计算初值，然后再延伸就可以了。最后最长回文字符串长度为mx-1。</p>
-<h1 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h1><p><a href="http://pingce.ayyz.cn/sfzj/%E6%8B%BE%E9%81%97/Manacher%E7%AE%97%E6%B3%95.htm" target="_blank" rel="noopener">Manacher算法讲稿</a></p>
+<h1 id="连接"><a class="markdownIt-Anchor" href="#连接"></a> 连接</h1>
+<p><a href="http://pingce.ayyz.cn/sfzj/%E6%8B%BE%E9%81%97/Manacher%E7%AE%97%E6%B3%95.htm" target="_blank" rel="noopener">Manacher算法讲稿</a></p>
 
   </section>
 
@@ -196,7 +198,7 @@
                 <p class="excerpt">
                 
                 f0=0,f1=1,fi=fi-1+fi-2（i&amp;gt;=2），求fn mod p
-对于100%的数据，0 &amp;lt; t &amp;lt; 10^5,0&amp;lt; n &amp;lt; 10^9,0 &amp;lt; p &amp;lt; 10^9 
+对于100%的数据，0 &amp;lt; t &amp;lt; 10^5,0&amp;lt; n &amp;lt; 10^9,0 &amp;lt; p &amp;lt; 10^9
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2016-08-09T06:49:37.000Z" class="post-list__meta--date date">2016-08-09</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
