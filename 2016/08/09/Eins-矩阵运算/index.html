@@ -1,163 +1,306 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    
-    <title>Eins-矩阵运算 | Marvolo</title>
-    <meta name="renderer" content="webkit">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="梦想随我，分数归你">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Eins-矩阵运算 | Marvolo">
-    <meta name="twitter:description" content="梦想随我，分数归你">
 
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Eins-矩阵运算 | Marvolo">
-    <meta property="og:description" content="梦想随我，分数归你">
+  
 
-    
-    <meta name="author" content="Marvolo">
-    
-    <link rel="stylesheet" href="/css/vno.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
-    
-    <link rel="icon" href="/images/avatar-small.png">
-    
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
 
-    <meta name="generator" content="hexo"/>
-    
-    <link rel="alternate" type="application/rss+xml" title="Marvolo" href="/atom.xml">
-    
 
-    <link rel="canonical" href="http://yoursite.com/2016/08/09/Eins-矩阵运算/"/>
 
-    
-      
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数学,矩阵运算,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="f0=0,f1=1,fi=fi-1+fi-2（i&amp;gt;=2），求fn mod p 对于100%的数据，0 &amp;lt; t &amp;lt; 10^5,0&amp;lt; n &amp;lt; 10^9,0 &amp;lt; p &amp;lt; 10^9">
+<meta name="keywords" content="数学,矩阵运算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eins-矩阵运算">
+<meta property="og:url" content="http://yoursite.com/2016/08/09/Eins-矩阵运算/index.html">
+<meta property="og:site_name" content="Marvolo">
+<meta property="og:description" content="f0=0,f1=1,fi=fi-1+fi-2（i&amp;gt;=2），求fn mod p 对于100%的数据，0 &amp;lt; t &amp;lt; 10^5,0&amp;lt; n &amp;lt; 10^9,0 &amp;lt; p &amp;lt; 10^9">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-08-29T05:03:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Eins-矩阵运算">
+<meta name="twitter:description" content="f0=0,f1=1,fi=fi-1+fi-2（i&amp;gt;=2），求fn mod p 对于100%的数据，0 &amp;lt; t &amp;lt; 10^5,0&amp;lt; n &amp;lt; 10^9,0 &amp;lt; p &amp;lt; 10^9">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/09/Eins-矩阵运算/">
+
+
+
+
+
+  <title>Eins-矩阵运算 | Marvolo</title>
+  
+
+
+
+
+
+
+
+
 </head>
 
-<body class="home-template no-js">
-    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
-    <span class="mobile btn-mobile-menu">
-        <i class="fa fa-list btn-mobile-menu__icon"></i>
-        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marvolo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Just for Dream</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/09/Eins-矩阵运算/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marvolo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marvolo">
     </span>
 
     
-<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/Night.jpg)">
-  <div class="panel-main">
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
+      <header class="post-header">
 
-        <a href="/" title="前往 Marvolo 的主页"><img src="/images/HeadPhoto.png" width="80" alt="Marvolo logo" class="panel-cover__logo logo"></a>
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Marvolo">Marvolo</a></h1>
         
-        <span class="panel-cover__subtitle panel-subtitle">Just for Dream</span>
         
-        <hr class="panel-cover__divider">
-        <p class="panel-cover__description">梦想随我，分数归你</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary">
-
-        <div class="navigation-wrapper">
-          <div>
-          <nav class="cover-navigation cover-navigation--primary">
-            <ul class="navigation">
-              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
-            
-              <li class="navigation__item"><a href="/Friend">Friend</a></li>
-            
-              <li class="navigation__item"><a href="/About">About</a></li>
-            
-            </ul>
-          </nav>
-          </div>
-          <div>
-          <nav class="cover-navigation navigation--social">
-  <ul class="navigation">
-
-  <!-- Weibo-->
-  
-
-  <!-- Github -->
-  
-  <li class="navigation__item">
-    <a href="https://github.com/zhtjtcz" title="查看我的GitHub主页" target="_blank">
-      <i class="social fa fa-github"></i>
-      <span class="label">Github</span>
-    </a>
-  </li>
-
-
-<!-- Stack Overflow -->
+          <h1 class="post-title" itemprop="name headline">Eins-矩阵运算</h1>
         
 
-  <!-- Google Plus -->
-  
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-09T14:49:37+08:00">
+                2016-08-09
+              </time>
+            
 
-<!-- Facebook -->
+            
 
-  
-<!-- Twitter -->
+            
+          </span>
 
-  <li class="navigation__item">
-    <a href="https://twitter.com/zhtjtcz" title="上Twitter找我" target="_blank">
-      <i class="social fa fa-twitter"></i>
-      <span class="label">Twitter</span>
-    </a>
-  </li>
+          
 
-  
+          
+            
+          
 
-  <li class="navigation__item">
-    <a href="/atom.xml" title="RSS" target="_blank">
-      <i class="social fa fa-rss"></i>
-      <span class="label">RSS</span>
-    </a>
-  </li>
+          
+          
 
+          
 
+          
 
-  </ul>
-</nav>
+          
 
-          </div>
         </div>
+      </header>
+    
 
-      </div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-    </div>
+      
+      
 
-    <div class="panel-cover--overlay cover-blue"></div>
-  </div>
-</header>
-
-    <div class="content-wrapper">
-        <div class="content-wrapper__inner">
-            <article class="post-container post-container--single">
-
-  <header class="post-header">
-    <div class="post-meta">
-      <time datetime="2016-08-09T06:49:37.000Z" class="post-list__meta--date date">2016-08-09</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/数学/">数学</a>, <a class="tag-link" href="/tags/矩阵运算/">矩阵运算</a>
- </span>
-      <span class="page-pv">
-      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
-      </span> 
-   
-    </div>
-    <h1 class="post-title">Eins-矩阵运算</h1>
-  </header>
-
-  <section class="post">
-    <p>f0=0,f1=1,fi=fi-1+fi-2（i&gt;=2），求fn mod p</p>
+      
+        <p>f0=0,f1=1,fi=fi-1+fi-2（i&gt;=2），求fn mod p</p>
 <p>对于100%的数据，0 &lt; t &lt; 10^5,0&lt; n &lt; 10^9,0 &lt; p &lt; 10^9</p>
 <a id="more"></a>
 <h1 id="题解"><a class="markdownIt-Anchor" href="#题解"></a> 题解</h1>
@@ -167,97 +310,376 @@
 <h1 id="链接"><a class="markdownIt-Anchor" href="#链接"></a> 链接</h1>
 <p><a href="http://218.28.19.228/cogs/problem/problem.php?pid=1426" target="_blank" rel="noopener">COGS</a></p>
 
-  </section>
-
-</article>
-<section class="read-more">
-           
+      
+    </div>
     
-               
-            <div class="read-more-item">
-                <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2016/08/29/Manacher算法学习笔记/" title="Manacher算法学习笔记">Manacher算法学习笔记</a></h2>
-                <p class="excerpt">
-                
-                 原理
-对于一个字符串，如果用朴素延伸比较的方法求回文串，时间复杂度最坏情况为O(N^2)，普通情况为玄学。而Manacher算法可以在O(N)的时间内解决问题。
-                &hellip;
-                </p>
-                <div class="post-list__meta"><time datetime="2016-08-29T04:56:11.000Z" class="post-list__meta--date date">2016-08-29</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/Manacher/">Manacher</a>, <a class="tag-link" href="/tags/代码模板/">代码模板</a>, <a class="tag-link" href="/tags/回文串/">回文串</a>, <a class="tag-link" href="/tags/字符串/">字符串</a>, <a class="tag-link" href="/tags/学习笔记/">学习笔记</a>
-</span><a class="btn-border-small" href="/2016/08/29/Manacher算法学习笔记/">继续阅读</a></div>
-                           
-            </div>
-        
-        
-               
-            <div class="read-more-item">
-                <span class="read-more-item-dim">更早的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2016/08/09/【CTSC2000】丘比特的烦恼-KM/" title="【CTSC2000】 丘比特的烦恼-KM">【CTSC2000】 丘比特的烦恼-KM</a></h2>
-                <p class="excerpt">
-                
-                在情人节的午夜，丘比特选择了N对男女，感应到他们之间缘分值的大小，他希望能选择最好的方法，使被他选择的每一个人被射中一次，且每一对被射中的人之间的缘分的和最大。当然，丘比特的弓箭有自己的缺陷，首先是弓箭的射程有限，其次是箭的轨迹只能是一条直线，也就是说，如果两个人之间的连线段上有别人，那么不能向他们射出丘比特之箭。
-作为一个凡人，你的任务是运用先进的计算机为丘比特找到最佳的方案。
-                &hellip;
-                </p>
-                <div class="post-list__meta"><time datetime="2016-08-09T05:53:12.000Z" class="post-list__meta--date date">2016-08-09</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/BZOJ/">BZOJ</a>, <a class="tag-link" href="/tags/CTSC/">CTSC</a>, <a class="tag-link" href="/tags/KM/">KM</a>
-</span><a class="btn-border-small" href="/2016/08/09/【CTSC2000】丘比特的烦恼-KM/">继续阅读</a></div>
-                       
-            </div>
-        
-     
-   
-   
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag"># 数学</a>
+          
+            <a href="/tags/矩阵运算/" rel="tag"># 矩阵运算</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/09/【CTSC2000】丘比特的烦恼-KM/" rel="next" title="【CTSC2000】 丘比特的烦恼-KM">
+                <i class="fa fa-chevron-left"></i> 【CTSC2000】 丘比特的烦恼-KM
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/29/Manacher算法学习笔记/" rel="prev" title="Manacher算法学习笔记">
+                Manacher算法学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
   
-</section>
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Marvolo</p>
+              <p class="site-description motion-element" itemprop="description">梦想随我，分数归你</p>
+          </div>
+
+          <nav class="site-state motion-element">
 
             
-            <footer class="footer">
-    <span class="footer__copyright">
-        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-    </span>
-    <span class="footer__copyright">
-        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
-    </span>
-    <span class="footer__copyright">
-        &copy; 2019 - 本站由 <a href="/">@Marvolo</a> 创建,
-        使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">hexo-theme-new-vno</a> 主题,
-        修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
-    </span>
-</footer>
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text"> 题解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text"> 代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">3.</span> <span class="nav-text"> 链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
     </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marvolo</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
     
 
-     
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  </div>
 
-	ga('create', 'UA-78918255-1', 'auto');
-	ga('send', 'pageview');
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-    
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
 
 
 
-    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-    
-    </script>
-    
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
