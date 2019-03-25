@@ -157,14 +157,16 @@
   </header>
 
   <section class="post">
-    <p>持续更新</p>
+    <p>本文持续更新</p>
 <a id="more"></a>
 <h1 id="io流"><a class="markdownIt-Anchor" href="#io流"></a> IO流</h1>
-<h2 id="输入"><a class="markdownIt-Anchor" href="#输入"></a> 输入</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=input(<span class="string">"Hello World:"</span>)				<span class="comment">#a:string</span></span><br><span class="line">b=int(input())						<span class="comment">#b:int</span></span><br><span class="line">a,b=map(int,input().split())		<span class="comment">#a,b:int</span></span><br><span class="line">a=list(map(int,input().split()))	<span class="comment">#a:from 0 to n-1</span></span><br></pre></td></tr></table></figure>
-<h2 id="输出"><a class="markdownIt-Anchor" href="#输出"></a> 输出</h2>
+<h2 id="输入及处理"><a class="markdownIt-Anchor" href="#输入及处理"></a> 输入及处理</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=input(<span class="string">"Hello World:"</span>)				<span class="comment">#a:string，单行读入字符串</span></span><br><span class="line">b=int(input())					    <span class="comment">#b:int，单行读入单个整数</span></span><br><span class="line">b=float(input())				   <span class="comment">#b:float，单行读入单个浮点数</span></span><br><span class="line">a,b=map(int,input().split())		<span class="comment">#a,b:int，单行读入两个整数</span></span><br><span class="line">a=list(map(int,input().split()))	 <span class="comment">#a:from 0 to n-1，单行读入不定个整数，从0开始存入数组</span></span><br></pre></td></tr></table></figure>
+<h2 id="输出及处理"><a class="markdownIt-Anchor" href="#输出及处理"></a> 输出及处理</h2>
+<p>注:以下均使用%转义的语法</p>
 <h3 id="基本操作"><a class="markdownIt-Anchor" href="#基本操作"></a> 基本操作</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"%s %d %f"</span>%(a,b,c))</span><br></pre></td></tr></table></figure>
+<p>一行内输出字符串，整数，浮点数，空格隔开</p>
 <h3 id="格式参数"><a class="markdownIt-Anchor" href="#格式参数"></a> 格式参数</h3>
 <blockquote>
 <p>d,i 	带符号的十进制整数<br>
@@ -183,38 +185,50 @@ s 	字符串（使用str转换任意python对象）</p>
 </blockquote>
 <h3 id="完整参数"><a class="markdownIt-Anchor" href="#完整参数"></a> 完整参数</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(objects,sep,end,file,flush)</span><br></pre></td></tr></table></figure>
-<blockquote>
 <ol>
-<li>sep</li>
+<li>sep<br>
+在输出字符串之间插入指定字符串，默认是空格</li>
 </ol>
-<p>在输出字符串之间插入指定字符串，默认是空格</p>
-</blockquote>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"a"</span>,<span class="string">"b"</span>,sep=<span class="string">"%"</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"a"</span>,<span class="string">"b"</span>,sep=<span class="string">"%"</span>)</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>
-<p>end</p>
-<p>在<code>print</code>输出语句的结尾加上指定字符串，默认是换行(\n)</p>
-</li>
+<li>end<br>
+在输出的结尾加上指定字符串，默认是换行(\n)，若取消换行写’’</li>
 </ol>
-</blockquote>
+<p>例：</p>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"a"</span>,end=<span class="string">"%"</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
 <ol start="3">
-<li>
-<p>file</p>
-<p>将文本输入到file-like对象中，可以是文件，数据流等等，默认是sys.stdout</p>
-</li>
+<li>file<br>
+将文本输入到file-like对象中，可以是文件，数据流等等，默认是sys.stdout</li>
 </ol>
-</blockquote>
+<p>例：</p>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fi=open(<span class="string">'zht.out'</span>,<span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi)</span><br></pre></td></tr></table></figure>
-<blockquote>
 <ol start="4">
 <li>flush<br>
 flush值为True或者False，默认为Flase,表示是否立刻将输出语句输入到参数file指向的对象中</li>
 </ol>
-</blockquote>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fi=open(<span class="string">'zht.out'</span>,<span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi,flush=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fi=open(<span class="string">'zht.out'</span>,<span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi,flush=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="库文件"><a class="markdownIt-Anchor" href="#库文件"></a> 库文件</h1>
+<h2 id="调用方法"><a class="markdownIt-Anchor" href="#调用方法"></a> 调用方法</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math					<span class="comment">#直接调用</span></span><br><span class="line">print(math.ceil(<span class="number">2.5</span>))</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> ceil		<span class="comment">#精确调用</span></span><br><span class="line">print(ceil(<span class="number">2.5</span>))</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> ceil <span class="keyword">as</span> CE</span><br><span class="line">print(CE(<span class="number">2.5</span>))				<span class="comment">#函数重命名</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<h2 id="常用库及函数表及用法"><a class="markdownIt-Anchor" href="#常用库及函数表及用法"></a> 常用库及函数表及用法</h2>
+<p>有待填坑</p>
+<h1 id="设计结构"><a class="markdownIt-Anchor" href="#设计结构"></a> 设计结构</h1>
+<h2 id="顺序结构"><a class="markdownIt-Anchor" href="#顺序结构"></a> 顺序结构</h2>
+<p>略</p>
+<h2 id="选择结构"><a class="markdownIt-Anchor" href="#选择结构"></a> 选择结构</h2>
+<h3 id="布尔值"><a class="markdownIt-Anchor" href="#布尔值"></a> 布尔值</h3>
+<p>Flase,None,0，空序列，空字符串，空字典为假，其他均为真</p>
+<h3 id="if语句"><a class="markdownIt-Anchor" href="#if语句"></a> if语句</h3>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> a&gt;b <span class="keyword">and</span> b==<span class="number">2</span>:</span><br><span class="line">    print(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">1</span>&lt;=a&lt;=<span class="number">1</span>:</span><br><span class="line">    print(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>注：elif可以替换为else，后面的条件删除，if之间可以嵌套</p>
+<p>运算符：</p>
+<p>and,or,not,==,&gt;,&lt;,!=,is,is not,in,not in</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line">b=<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> a <span class="keyword">is</span> b:</span><br><span class="line">    print(<span class="number">1</span>)	<span class="comment">#a,b指向同一个对象</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> b <span class="keyword">in</span> a:</span><br><span class="line">    print(<span class="number">1</span>)	<span class="comment">#b在a中</span></span><br></pre></td></tr></table></figure>
+<h2 id="循环结构"><a class="markdownIt-Anchor" href="#循环结构"></a> 循环结构</h2>
 <h1 id="数据结构"><a class="markdownIt-Anchor" href="#数据结构"></a> 数据结构</h1>
 <h2 id="list"><a class="markdownIt-Anchor" href="#list"></a> List</h2>
 <p>Continue…</p>
