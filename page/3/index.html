@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,7 +18,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -36,50 +43,60 @@
 
 
 
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
 
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
 
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="梦想随我，分数归你">
+  <meta name="description" content="梦想随我，分数归你">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Marvolo">
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
@@ -92,29 +109,6 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
 
 
 
@@ -122,7 +116,11 @@
 
 
 
-
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Marvolo</title>
   
@@ -133,6 +131,35 @@
 
 
 
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
@@ -149,7 +176,7 @@
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -159,13 +186,16 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">Just for Dream</p>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -173,35 +203,55 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Accueil</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -209,12 +259,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -227,6 +285,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -236,7 +296,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -251,31 +311,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【CTSC2001】最终情报网-费用流/" itemprop="url">【CTSC2001】最终情报网-费用流</a></h1>
+                
+                <a href="/2017/01/25/【CTSC2001】最终情报网-费用流/" class="post-title-link" itemprop="url">【CTSC2001】最终情报网-费用流</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:59:11+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:59:11 / Updated at: 15:59:56" itemprop="dateCreated datePublished" datetime="2017-01-25T15:59:11+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -313,21 +388,29 @@
 我需要一个方案，确定消息应该从哪些人手中传递到哪些人手中，使得最终计划的可靠性最大。</p>
 <p>求这个最可靠的消息传递方案。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/25/【CTSC2001】最终情报网-费用流/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/01/25/【CTSC2001】最终情报网-费用流/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -360,6 +443,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -369,7 +454,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -384,31 +469,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【网络流24题】试题库-最大流/" itemprop="url">【网络流24题】试题库-最大流</a></h1>
+                
+                <a href="/2017/01/25/【网络流24题】试题库-最大流/" class="post-title-link" itemprop="url">【网络流24题】试题库-最大流</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:58:04+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:58:04 / Updated at: 15:58:32" itemprop="dateCreated datePublished" datetime="2017-01-25T15:58:04+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -437,21 +537,29 @@
         
           <p>假设一个试题库中有n道试题。每道试题都标明了所属类别。同一道题可能有多个类别属性。现要从题库中抽取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>道题组成试卷。并要求试卷包含指定类型的试题。试设计一个满足要求的组卷算法。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/25/【网络流24题】试题库-最大流/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/01/25/【网络流24题】试题库-最大流/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -484,6 +592,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -493,7 +603,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -508,31 +618,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【网络流24题】深海机器人-费用流/" itemprop="url">【网络流24题】深海机器人-费用流</a></h1>
+                
+                <a href="/2017/01/25/【网络流24题】深海机器人-费用流/" class="post-title-link" itemprop="url">【网络流24题】深海机器人-费用流</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:56:54+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:56:54 / Updated at: 15:57:32" itemprop="dateCreated datePublished" datetime="2017-01-25T15:56:54+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -561,21 +686,29 @@
         
           <p>给定一个P*Q的网格，网格上每条边有一个价值。现在有A个起点，B个终点。每一个起点与终点都有一个参数R，分别表示有R个人从该起点出发或到达该终点。已知每条边的价值只能被一个人采集一次，求可采集的最大价值。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/25/【网络流24题】深海机器人-费用流/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/01/25/【网络流24题】深海机器人-费用流/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -608,6 +741,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -617,7 +752,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -632,31 +767,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【网络流24题】最长递增子序列-最大流/" itemprop="url">【网络流24题】最长递增子序列-最大流</a></h1>
+                
+                <a href="/2017/01/25/【网络流24题】最长递增子序列-最大流/" class="post-title-link" itemprop="url">【网络流24题】最长递增子序列-最大流</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:55:07+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:55:07 / Updated at: 15:56:02" itemprop="dateCreated datePublished" datetime="2017-01-25T15:55:07+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -688,21 +838,29 @@
 （2）计算从给定的序列中最多可取出多少个长度为s的递增子序列。<br>
 （3）如果允许在取出的序列中多次使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">x_{1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，则从给定序列中最多可取出多少个长度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span>的递增子序列。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/25/【网络流24题】最长递增子序列-最大流/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/01/25/【网络流24题】最长递增子序列-最大流/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -735,6 +893,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -744,7 +904,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -759,31 +919,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【NOIP2008】传纸条-费用流/" itemprop="url">【NOIP2008】传纸条-费用流</a></h1>
+                
+                <a href="/2017/01/25/【NOIP2008】传纸条-费用流/" class="post-title-link" itemprop="url">【NOIP2008】传纸条-费用流</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:53:24+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:53:24 / Updated at: 15:54:26" itemprop="dateCreated datePublished" datetime="2017-01-25T15:53:24+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -812,21 +987,29 @@
         
           <p>有一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>∗</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">N*M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span></span></span>的矩阵，每个位置有一个价值。现在求两条从左上角到右下角的不相交路线(原点与终点除外)，使得路径上的元素之和最大。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/25/【NOIP2008】传纸条-费用流/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/01/25/【NOIP2008】传纸条-费用流/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -859,6 +1042,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -868,7 +1053,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -883,31 +1068,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【网络流24题】数字梯形-费用流/" itemprop="url">【网络流24题】数字梯形-费用流</a></h1>
+                
+                <a href="/2017/01/25/【网络流24题】数字梯形-费用流/" class="post-title-link" itemprop="url">【网络流24题】数字梯形-费用流</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:52:18+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:52:18 / Updated at: 15:52:50" itemprop="dateCreated datePublished" datetime="2017-01-25T15:52:18+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -943,21 +1143,29 @@
 </blockquote>
 <p>对于给定的数字梯形，分别按照规则1，规则2，和规则3 计算出从梯形的顶至底的m条路径，使这m条路径经过的数字总和最大。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/25/【网络流24题】数字梯形-费用流/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/01/25/【网络流24题】数字梯形-费用流/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -990,6 +1198,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -999,7 +1209,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1014,31 +1224,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【HNOI2012】排队-数学/" itemprop="url">【HNOI2012】排队-数学</a></h1>
+                
+                <a href="/2017/01/25/【HNOI2012】排队-数学/" class="post-title-link" itemprop="url">【HNOI2012】排队-数学</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:50:44+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:50:44 / Updated at: 15:51:38" itemprop="dateCreated datePublished" datetime="2017-01-25T15:50:44+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1067,21 +1292,29 @@
         
           <p>有N个男生与M个女生以及两个老师排队。有以下两个要求:1.任意两个女生不相邻。2.两个老师不相邻。求所有符合条件的排队方案数。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/25/【HNOI2012】排队-数学/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/01/25/【HNOI2012】排队-数学/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1114,6 +1347,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1123,7 +1358,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1138,31 +1373,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【CQOI2007】余数之和sum-数学/" itemprop="url">【CQOI2007】余数之和sum-数学</a></h1>
+                
+                <a href="/2017/01/25/【CQOI2007】余数之和sum-数学/" class="post-title-link" itemprop="url">【CQOI2007】余数之和sum-数学</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:48:48+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:48:48 / Updated at: 15:49:24" itemprop="dateCreated datePublished" datetime="2017-01-25T15:48:48+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1208,12 +1458,18 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1246,6 +1502,8 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1255,7 +1513,7 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1270,31 +1528,46 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【HAOI2013】开关控制-高斯消元法/" itemprop="url">【HAOI2013】开关控制-高斯消元法</a></h1>
+                
+                <a href="/2017/01/25/【HAOI2013】开关控制-高斯消元法/" class="post-title-link" itemprop="url">【HAOI2013】开关控制-高斯消元法</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:47:03+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:47:03 / Updated at: 15:48:06" itemprop="dateCreated datePublished" datetime="2017-01-25T15:47:03+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1323,21 +1596,29 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
         
           <p>给定一个连通图的开关连接关系，每一次可以改变一个开关及其相邻的开关的开关关系。求最少多少次可以使所有的开关变为开的状态。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/25/【HAOI2013】开关控制-高斯消元法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/01/25/【HAOI2013】开关控制-高斯消元法/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1370,6 +1651,8 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1379,7 +1662,7 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1394,31 +1677,46 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/25/【NOI2008】志愿者招募-费用流/" itemprop="url">【NOI2008】志愿者招募-费用流</a></h1>
+                
+                <a href="/2017/01/25/【NOI2008】志愿者招募-费用流/" class="post-title-link" itemprop="url">【NOI2008】志愿者招募-费用流</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T15:44:51+08:00">
-                2017-01-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2017-01-25 15:44:51 / Updated at: 15:46:14" itemprop="dateCreated datePublished" datetime="2017-01-25T15:44:51+08:00">2017-01-25</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1448,21 +1746,29 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
           <p>申奥成功后，布布经过不懈努力，终于成为奥组委下属公司人力资源部门的主管。布布刚上任就遇到了一个难题：为即将启动的奥运新项目招募一批短期志愿者。经过估算，这个项目需要N 天才能完成，其中第i 天至少需要Ai 个人。</p>
 <p>布布通过了解得知，一共有M 类志愿者可以招募。其中第i 类可以从第Si 天工作到第Ti 天，招募费用是每人Ci 元。新官上任三把火，为了出色地完成自己的工作，布布希望用尽量少的费用招募足够的志愿者，但这并不是他的特长！于是布布找到了你，希望你帮他设计一种最 优的招募方案。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/25/【NOI2008】志愿者招募-费用流/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/01/25/【NOI2008】志愿者招募-费用流/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1491,15 +1797,12 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Page précédente"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Page suivante"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1515,63 +1818,268 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Marvolo</p>
-              <p class="site-description motion-element" itemprop="description">梦想随我，分数归你</p>
+              <div class="site-description motion-element" itemprop="description">梦想随我，分数归你</div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">80</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
+                <div class="site-state-item site-state-posts">
                 
-                  <span class="site-state-item-count">100</span>
-                  <span class="site-state-item-name">标签</span>
+                  <a href="/archives/">
                 
-              </div>
+                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-name">articles</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">100</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
             
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -1579,6 +2087,7 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
     </div>
   </aside>
+  
 
 
         
@@ -1588,16 +2097,18 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Marvolo</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -1605,12 +2116,13 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Thème – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
 
 
 
 
         
+
 
 
 
@@ -1631,11 +2143,14 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1649,92 +2164,11 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -1748,7 +2182,51 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
 
 
 
@@ -1760,6 +2238,19 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   

@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,7 +18,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -36,50 +43,60 @@
 
 
 
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
 
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
 
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="梦想随我，分数归你">
+  <meta name="description" content="梦想随我，分数归你">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Marvolo">
 <meta property="og:url" content="http://yoursite.com/page/8/index.html">
@@ -92,29 +109,6 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
 
 
 
@@ -122,7 +116,11 @@
 
 
 
-
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Marvolo</title>
   
@@ -133,6 +131,35 @@
 
 
 
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
@@ -149,7 +176,7 @@
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -159,13 +186,16 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">Just for Dream</p>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -173,35 +203,55 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Accueil</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -209,12 +259,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -227,6 +285,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -236,7 +296,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -251,31 +311,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/29/【国家集训队2011】-数颜色-带修改莫队/" itemprop="url">【国家集训队2011】 数颜色-带修改莫队</a></h1>
+                
+                <a href="/2016/08/29/【国家集训队2011】-数颜色-带修改莫队/" class="post-title-link" itemprop="url">【国家集训队2011】 数颜色-带修改莫队</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T18:52:57+08:00">
-                2016-08-29
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-08-29 18:52:57 / Updated at: 18:55:20" itemprop="dateCreated datePublished" datetime="2016-08-29T18:52:57+08:00">2016-08-29</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -307,21 +382,29 @@
 2、 R P Col 把第P支画笔替换为颜色Col。</p>
 <p>对于每个Q操作，输出答案。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/29/【国家集训队2011】-数颜色-带修改莫队/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/29/【国家集训队2011】-数颜色-带修改莫队/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -354,6 +437,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -363,7 +448,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -378,31 +463,58 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/29/【SDOI2009】HH的项链-莫队/" itemprop="url">【SDOI2009】HH的项链-莫队</a></h1>
+                
+                <a href="/2016/08/29/【SDOI2009】HH的项链-莫队/" class="post-title-link" itemprop="url">【SDOI2009】HH的项链-莫队</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T18:47:26+08:00">
-                2016-08-29
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-08-29 18:47:26" itemprop="dateCreated datePublished" datetime="2016-08-29T18:47:26+08:00">2016-08-29</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2017-02-01 18:57:32" itemprop="dateModified" datetime="2017-02-01T18:57:32+08:00">2017-02-01</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -431,21 +543,29 @@
         
           <p>HH有一串由各种漂亮的贝壳组成的项链。有一天，他突然提出了一个问题：某一段贝壳中，包含了多少种不同的贝壳？这个问题很难回答。。。因为项链实在是太长了。于是，他只好求助睿智的你，来解决这个问题。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/29/【SDOI2009】HH的项链-莫队/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/29/【SDOI2009】HH的项链-莫队/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -478,6 +598,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -487,7 +609,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -502,31 +624,46 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/29/【国家集训队2009】小Z的袜子-莫队/" itemprop="url">【国家集训队2009】小Z的袜子-莫队</a></h1>
+                
+                <a href="/2016/08/29/【国家集训队2009】小Z的袜子-莫队/" class="post-title-link" itemprop="url">【国家集训队2009】小Z的袜子-莫队</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T18:43:28+08:00">
-                2016-08-29
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-08-29 18:43:28 / Updated at: 18:51:00" itemprop="dateCreated datePublished" datetime="2016-08-29T18:43:28+08:00">2016-08-29</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -555,21 +692,29 @@
         
           <p>小Z有N只袜子，每只袜子有一个颜色。现在有N个区间询问，现在小Z想知道对于每个区间询问，在这个区间内他有多少概率抽到两只颜色相同的袜子。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/29/【国家集训队2009】小Z的袜子-莫队/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/29/【国家集训队2009】小Z的袜子-莫队/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -602,6 +747,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -611,7 +758,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -626,31 +773,58 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/29/【ZJOI2008】树的统计-树链剖分/" itemprop="url">【ZJOI2008】树的统计-树链剖分</a></h1>
+                
+                <a href="/2016/08/29/【ZJOI2008】树的统计-树链剖分/" class="post-title-link" itemprop="url">【ZJOI2008】树的统计-树链剖分</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T13:20:26+08:00">
-                2016-08-29
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-08-29 13:20:26" itemprop="dateCreated datePublished" datetime="2016-08-29T13:20:26+08:00">2016-08-29</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2017-02-01 18:57:14" itemprop="dateModified" datetime="2017-02-01T18:57:14+08:00">2017-02-01</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -681,21 +855,29 @@
 一些操作： I. CHANGE u t : 把结点u的权值改为t II. QMAX u v: 询问从点u到点v的路径上的节点的最大权值<br>
 III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：从点u到点v的路径上的节点包括u和v本身。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/29/【ZJOI2008】树的统计-树链剖分/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/29/【ZJOI2008】树的统计-树链剖分/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -728,6 +910,8 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -737,7 +921,7 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -752,31 +936,46 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/29/【国家集训队2011】拉拉队排练-Manacher/" itemprop="url">【国家集训队2011】拉拉队排练-Manacher</a></h1>
+                
+                <a href="/2016/08/29/【国家集训队2011】拉拉队排练-Manacher/" class="post-title-link" itemprop="url">【国家集训队2011】拉拉队排练-Manacher</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T13:11:13+08:00">
-                2016-08-29
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-08-29 13:11:13 / Updated at: 13:13:08" itemprop="dateCreated datePublished" datetime="2016-08-29T13:11:13+08:00">2016-08-29</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -805,21 +1004,29 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
         
           <p>给你一个长度为N的字符串，求其前K个长度为奇数的回文子串的长度之积，答案对19930726取模。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/29/【国家集训队2011】拉拉队排练-Manacher/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/29/【国家集训队2011】拉拉队排练-Manacher/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -852,6 +1059,8 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -861,7 +1070,7 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -876,31 +1085,46 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/29/Manacher算法学习笔记/" itemprop="url">Manacher算法学习笔记</a></h1>
+                
+                <a href="/2016/08/29/Manacher算法学习笔记/" class="post-title-link" itemprop="url">Manacher算法学习笔记</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T12:56:11+08:00">
-                2016-08-29
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-08-29 12:56:11 / Updated at: 18:55:54" itemprop="dateCreated datePublished" datetime="2016-08-29T12:56:11+08:00">2016-08-29</time>
             
 
             
+              
 
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -930,21 +1154,29 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
           <h1 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h1>
 <p>对于一个字符串，如果用朴素延伸比较的方法求回文串，时间复杂度最坏情况为O(N^2)，普通情况为玄学。而Manacher算法可以在O(N)的时间内解决问题。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/29/Manacher算法学习笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/29/Manacher算法学习笔记/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -977,6 +1209,8 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -986,7 +1220,7 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1001,31 +1235,58 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/09/Eins-矩阵运算/" itemprop="url">Eins-矩阵运算</a></h1>
+                
+                <a href="/2016/08/09/Eins-矩阵运算/" class="post-title-link" itemprop="url">Eins-矩阵运算</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-09T14:49:37+08:00">
-                2016-08-09
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-08-09 14:49:37" itemprop="dateCreated datePublished" datetime="2016-08-09T14:49:37+08:00">2016-08-09</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2016-08-29 13:03:54" itemprop="dateModified" datetime="2016-08-29T13:03:54+08:00">2016-08-29</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1055,21 +1316,29 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
           <p>f0=0,f1=1,fi=fi-1+fi-2（i&gt;=2），求fn mod p</p>
 <p>对于100%的数据，0 &lt; t &lt; 10^5,0&lt; n &lt; 10^9,0 &lt; p &lt; 10^9</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/09/Eins-矩阵运算/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/09/Eins-矩阵运算/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1102,6 +1371,8 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1111,7 +1382,7 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1126,31 +1397,58 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/09/【CTSC2000】丘比特的烦恼-KM/" itemprop="url">【CTSC2000】 丘比特的烦恼-KM</a></h1>
+                
+                <a href="/2016/08/09/【CTSC2000】丘比特的烦恼-KM/" class="post-title-link" itemprop="url">【CTSC2000】 丘比特的烦恼-KM</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-09T13:53:12+08:00">
-                2016-08-09
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-08-09 13:53:12" itemprop="dateCreated datePublished" datetime="2016-08-09T13:53:12+08:00">2016-08-09</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2016-08-29 13:03:36" itemprop="dateModified" datetime="2016-08-29T13:03:36+08:00">2016-08-29</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1180,21 +1478,29 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
           <p>在情人节的午夜，丘比特选择了N对男女，感应到他们之间缘分值的大小，他希望能选择最好的方法，使被他选择的每一个人被射中一次，且每一对被射中的人之间的缘分的和最大。当然，丘比特的弓箭有自己的缺陷，首先是弓箭的射程有限，其次是箭的轨迹只能是一条直线，也就是说，如果两个人之间的连线段上有别人，那么不能向他们射出丘比特之箭。</p>
 <p>作为一个凡人，你的任务是运用先进的计算机为丘比特找到最佳的方案。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/09/【CTSC2000】丘比特的烦恼-KM/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/09/【CTSC2000】丘比特的烦恼-KM/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1227,6 +1533,8 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1236,7 +1544,7 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1251,31 +1559,58 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/25/KM算法学习笔记/" itemprop="url">KM算法学习笔记</a></h1>
+                
+                <a href="/2016/07/25/KM算法学习笔记/" class="post-title-link" itemprop="url">KM算法学习笔记</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-25T11:01:58+08:00">
-                2016-07-25
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-07-25 11:01:58" itemprop="dateCreated datePublished" datetime="2016-07-25T11:01:58+08:00">2016-07-25</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2016-08-29 13:04:14" itemprop="dateModified" datetime="2016-08-29T13:04:14+08:00">2016-08-29</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1304,21 +1639,29 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
         
           <p>一个二分图，如果没有边权，可以用朴素的匈牙利来求最大匹配数。如果有边权，可以用网络流建模，用超级源和超级汇来跑一边最大流算法，还可以用<strong>KM算法</strong>来求解。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/07/25/KM算法学习笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/07/25/KM算法学习笔记/#more" rel="contents">
+                Lire la suite &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1351,6 +1694,8 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1360,7 +1705,7 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marvolo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="梦想随我，分数归你">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1375,31 +1720,58 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/22/Hexo/" itemprop="url">Hexo</a></h1>
+                
+                <a href="/2016/07/22/Hexo/" class="post-title-link" itemprop="url">Hexo</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-22T11:25:49+08:00">
-                2016-07-22
-              </time>
+
+              
+                
+              
+
+              <time title="Post created: 2016-07-22 11:25:49" itemprop="dateCreated datePublished" datetime="2016-07-22T11:25:49+08:00">2016-07-22</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2016-07-24 19:38:08" itemprop="dateModified" datetime="2016-07-24T19:38:08+08:00">2016-07-24</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1437,12 +1809,18 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1471,15 +1849,12 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Page précédente"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1495,63 +1870,268 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Marvolo</p>
-              <p class="site-description motion-element" itemprop="description">梦想随我，分数归你</p>
+              <div class="site-description motion-element" itemprop="description">梦想随我，分数归你</div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">80</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
+                <div class="site-state-item site-state-posts">
                 
-                  <span class="site-state-item-count">100</span>
-                  <span class="site-state-item-name">标签</span>
+                  <a href="/archives/">
                 
-              </div>
+                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-name">articles</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">100</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
             
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -1559,6 +2139,7 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
     </div>
   </aside>
+  
 
 
         
@@ -1568,16 +2149,18 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Marvolo</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -1585,12 +2168,13 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Thème – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
 
 
 
 
         
+
 
 
 
@@ -1611,11 +2195,14 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1629,92 +2216,11 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -1728,7 +2234,51 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
 
 
 
@@ -1740,6 +2290,19 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
