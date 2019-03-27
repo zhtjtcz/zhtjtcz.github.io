@@ -1207,9 +1207,9 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
             
             <tag> 费用流 </tag>
             
-            <tag> 线性规划 </tag>
-            
             <tag> NOI </tag>
+            
+            <tag> 线性规划 </tag>
             
         </tags>
         
@@ -2750,9 +2750,9 @@ III. QSUM u v: 询问从点u到点v的路径上的节点的权值和 注意：�
             
             <tag> LCA </tag>
             
-            <tag> ZJOI </tag>
-            
             <tag> 树链剖分 </tag>
+            
+            <tag> ZJOI </tag>
             
         </tags>
         
