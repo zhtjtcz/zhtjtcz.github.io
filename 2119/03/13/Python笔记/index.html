@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Marvolo">
 <meta property="og:description" content="本文持续更新">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-01T06:44:25.475Z">
+<meta property="og:updated_time" content="2019-04-01T07:34:17.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python笔记（手动置顶）">
 <meta name="twitter:description" content="本文持续更新">
@@ -196,7 +196,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="Navigationsleiste an/ausschalten">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -224,7 +224,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
 
   </li>
         
@@ -241,7 +241,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Schlagwörter</a>
 
   </li>
         
@@ -258,7 +258,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
 
   </li>
 
@@ -355,14 +355,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2119-03-13 21:45:25" itemprop="dateCreated datePublished" datetime="2119-03-13T21:45:25+08:00">2119-03-13</time>
+              <time title="Erstellt: 2119-03-13 21:45:25" itemprop="dateCreated datePublished" datetime="2119-03-13T21:45:25+08:00">2119-03-13</time>
             
 
             
@@ -377,9 +377,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Edited on</span>
+                  <span class="post-meta-item-text">Bearbeitet am</span>
                 
-                <time title="Modified: 2019-04-01 14:44:25" itemprop="dateModified" datetime="2019-04-01T14:44:25+08:00">2019-04-01</time>
+                <time title="Geändert am: 2019-04-01 15:34:17" itemprop="dateModified" datetime="2019-04-01T15:34:17+08:00">2019-04-01</time>
               
             
           </span>
@@ -415,39 +415,69 @@
       
         <p>本文持续更新</p>
 <a id="more"></a>
-<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="输入及处理"><a href="#输入及处理" class="headerlink" title="输入及处理"></a>输入及处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=input(<span class="string">"Hello World:"</span>)				<span class="comment">#a:string，单行读入字符串</span></span><br><span class="line">b=int(input())					    <span class="comment">#b:int，单行读入单个整数</span></span><br><span class="line">b=float(input())				   <span class="comment">#b:float，单行读入单个浮点数</span></span><br><span class="line">a,b=map(int,input().split())		<span class="comment">#a,b:int，单行读入两个整数</span></span><br><span class="line">a=list(map(int,input().split()))	 <span class="comment">#a:from 0 to n-1，单行读入不定个整数，从0开始存入数组</span></span><br></pre></td></tr></table></figure>
-<h2 id="输出及处理"><a href="#输出及处理" class="headerlink" title="输出及处理"></a>输出及处理</h2><p>注:以下均使用%转义的语法</p>
-<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"%s %d %f"</span>%(a,b,c))</span><br></pre></td></tr></table></figure>
+<h1 id="io流"><a class="markdownIt-Anchor" href="#io流"></a> IO流</h1>
+<h2 id="输入及处理"><a class="markdownIt-Anchor" href="#输入及处理"></a> 输入及处理</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=input(<span class="string">"Hello World:"</span>)				<span class="comment">#a:string，单行读入字符串</span></span><br><span class="line">b=int(input())					    <span class="comment">#b:int，单行读入单个整数</span></span><br><span class="line">b=float(input())				   <span class="comment">#b:float，单行读入单个浮点数</span></span><br><span class="line">a,b=map(int,input().split())		<span class="comment">#a,b:int，单行读入两个整数</span></span><br><span class="line">a=list(map(int,input().split()))	 <span class="comment">#a:from 0 to n-1，单行读入不定个整数，从0开始存入数组</span></span><br></pre></td></tr></table></figure>
+<h2 id="输出及处理"><a class="markdownIt-Anchor" href="#输出及处理"></a> 输出及处理</h2>
+<p>注:以下均使用%转义的语法</p>
+<h3 id="基本操作"><a class="markdownIt-Anchor" href="#基本操作"></a> 基本操作</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"%s %d %f"</span>%(a,b,c))</span><br></pre></td></tr></table></figure>
 <p>一行内输出字符串，整数，浮点数，空格隔开</p>
-<h3 id="格式参数"><a href="#格式参数" class="headerlink" title="格式参数"></a>格式参数</h3><blockquote>
-<p>d,i     带符号的十进制整数<br>o     不带符号的八进制<br>u     不带符号的十进制<br>x     不带符号的十六进制（小写）<br>X     不带符号的十六进制（大写）<br>e     科学记数法表示的浮点数（小写）<br>E     科学记数法表示的浮点数（大写）<br>f,F     十进制浮点数<br>g     如果指数大于-4或者小于精度值则和e相同，其他情况与f相同<br>g     如果指数大于-4或者小于精度值则和E相同，其他情况与F相同<br>C     单字符（接受整数或者单字符的字符串）<br>r     字符串（使用repr转换任意python对象）<br>s     字符串（使用str转换任意python对象）</p>
+<h3 id="格式参数"><a class="markdownIt-Anchor" href="#格式参数"></a> 格式参数</h3>
+<blockquote>
+<p>d,i 	带符号的十进制整数<br>
+o 	不带符号的八进制<br>
+u 	不带符号的十进制<br>
+x 	不带符号的十六进制（小写）<br>
+X 	不带符号的十六进制（大写）<br>
+e 	科学记数法表示的浮点数（小写）<br>
+E 	科学记数法表示的浮点数（大写）<br>
+f,F 	十进制浮点数<br>
+g 	如果指数大于-4或者小于精度值则和e相同，其他情况与f相同<br>
+g 	如果指数大于-4或者小于精度值则和E相同，其他情况与F相同<br>
+C 	单字符（接受整数或者单字符的字符串）<br>
+r 	字符串（使用repr转换任意python对象）<br>
+s 	字符串（使用str转换任意python对象）</p>
 </blockquote>
-<h3 id="完整参数"><a href="#完整参数" class="headerlink" title="完整参数"></a>完整参数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(objects,sep,end,file,flush)</span><br></pre></td></tr></table></figure>
+<h3 id="完整参数"><a class="markdownIt-Anchor" href="#完整参数"></a> 完整参数</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(objects,sep,end,file,flush)</span><br></pre></td></tr></table></figure>
 <ol>
-<li>sep<br>在输出字符串之间插入指定字符串，默认是空格</li>
+<li>sep<br>
+在输出字符串之间插入指定字符串，默认是空格</li>
 </ol>
 <p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"a"</span>,<span class="string">"b"</span>,sep=<span class="string">"%"</span>)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>end<br>在输出的结尾加上指定字符串，默认是换行(\n)，若取消换行写’’</li>
+<ol start="2">
+<li>end<br>
+在输出的结尾加上指定字符串，默认是换行(\n)，若取消换行写’’</li>
 </ol>
 <p>例：</p>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"a"</span>,end=<span class="string">"%"</span>)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>file<br>将文本输入到file-like对象中，可以是文件，数据流等等，默认是sys.stdout</li>
+<ol start="3">
+<li>file<br>
+将文本输入到file-like对象中，可以是文件，数据流等等，默认是sys.stdout</li>
 </ol>
 <p>例：</p>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fi=open(<span class="string">'zht.out'</span>,<span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>flush<br>flush值为True或者False，默认为Flase,表示是否立刻将输出语句输入到参数file指向的对象中</li>
+<ol start="4">
+<li>flush<br>
+flush值为True或者False，默认为Flase,表示是否立刻将输出语句输入到参数file指向的对象中</li>
 </ol>
 <p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fi=open(<span class="string">'zht.out'</span>,<span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi)</span><br><span class="line">print(<span class="string">"a"</span>,file=fi,flush=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="库文件"><a href="#库文件" class="headerlink" title="库文件"></a>库文件</h1><h2 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math					<span class="comment">#直接调用</span></span><br><span class="line">print(math.ceil(<span class="number">2.5</span>))</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> ceil		<span class="comment">#精确调用</span></span><br><span class="line">print(ceil(<span class="number">2.5</span>))</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> ceil <span class="keyword">as</span> CE</span><br><span class="line">print(CE(<span class="number">2.5</span>))				<span class="comment">#函数重命名</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-<h2 id="常用库及函数表及用法"><a href="#常用库及函数表及用法" class="headerlink" title="常用库及函数表及用法"></a>常用库及函数表及用法</h2><p>有待填坑</p>
-<h1 id="设计结构"><a href="#设计结构" class="headerlink" title="设计结构"></a>设计结构</h1><h2 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h2><p>略</p>
-<h2 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h2><h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><p>Flase,None,0，空序列，空字符串，空字典为假，其他均为真</p>
-<h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><p>例：</p>
+<h1 id="库文件"><a class="markdownIt-Anchor" href="#库文件"></a> 库文件</h1>
+<h2 id="调用方法"><a class="markdownIt-Anchor" href="#调用方法"></a> 调用方法</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math					<span class="comment">#直接调用</span></span><br><span class="line">print(math.ceil(<span class="number">2.5</span>))</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> ceil		<span class="comment">#精确调用</span></span><br><span class="line">print(ceil(<span class="number">2.5</span>))</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> ceil <span class="keyword">as</span> CE</span><br><span class="line">print(CE(<span class="number">2.5</span>))				<span class="comment">#函数重命名</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<h2 id="常用库及函数表及用法"><a class="markdownIt-Anchor" href="#常用库及函数表及用法"></a> 常用库及函数表及用法</h2>
+<p>有待填坑</p>
+<h1 id="设计结构"><a class="markdownIt-Anchor" href="#设计结构"></a> 设计结构</h1>
+<h2 id="顺序结构"><a class="markdownIt-Anchor" href="#顺序结构"></a> 顺序结构</h2>
+<p>略</p>
+<h2 id="选择结构"><a class="markdownIt-Anchor" href="#选择结构"></a> 选择结构</h2>
+<h3 id="布尔值"><a class="markdownIt-Anchor" href="#布尔值"></a> 布尔值</h3>
+<p>Flase,None,0，空序列，空字符串，空字典为假，其他均为真</p>
+<h3 id="if语句"><a class="markdownIt-Anchor" href="#if语句"></a> if语句</h3>
+<p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> a&gt;b <span class="keyword">and</span> b==<span class="number">2</span>:</span><br><span class="line">    print(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">1</span>&lt;=a&lt;=<span class="number">1</span>:</span><br><span class="line">    print(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <p>注：elif可以替换为else，后面的条件删除，if之间可以嵌套</p>
 <p>运算符：</p>
@@ -455,17 +485,23 @@
 <p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line">b=<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> a <span class="keyword">is</span> b:</span><br><span class="line">    print(<span class="number">1</span>)	<span class="comment">#a,b指向同一个对象</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> b <span class="keyword">in</span> a:</span><br><span class="line">    print(<span class="number">1</span>)	<span class="comment">#b在a中</span></span><br></pre></td></tr></table></figure>
-<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>例：</p>
+<h2 id="循环结构"><a class="markdownIt-Anchor" href="#循环结构"></a> 循环结构</h2>
+<h3 id="for循环"><a class="markdownIt-Anchor" href="#for循环"></a> for循环</h3>
+<p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=list(range(<span class="number">0</span>,<span class="number">5</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):   <span class="comment">#后面为可迭代对象</span></span><br><span class="line">    print(<span class="string">"tql!"</span>)       <span class="comment">#从0~9循环</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:             <span class="comment">#后面为列表</span></span><br><span class="line">    print(<span class="string">"tql!"</span>)       <span class="comment">#从0~4循环</span></span><br></pre></td></tr></table></figure>
-<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p>例：</p>
+<h3 id="while循环"><a class="markdownIt-Anchor" href="#while循环"></a> while循环</h3>
+<p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">    print(<span class="string">"tql!"</span>)</span><br><span class="line">    i+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i&gt;=<span class="number">10</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">continue</span>	<span class="comment">#0~10循环</span></span><br></pre></td></tr></table></figure>
-<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>含特殊符号使用\转义</p>
+<h1 id="数据结构"><a class="markdownIt-Anchor" href="#数据结构"></a> 数据结构</h1>
+<h2 id="字符串"><a class="markdownIt-Anchor" href="#字符串"></a> 字符串</h2>
+<p>含特殊符号使用\转义</p>
 <p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"\"Hello World!\""</span>)</span><br></pre></td></tr></table></figure>
-<p>字符串是不可变对象，只可以正反序访问，正序0~n-1,反序-1~-n</p>
+<p>字符串是不可变对象，只可以正反序访问，正序0<sub>n-1,反序-1</sub>-n</p>
 <p>切片访问：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">"abcd"</span></span><br><span class="line">print(a[<span class="number">0</span>:<span class="number">2</span>])</span><br><span class="line">print(a[:<span class="number">2</span>])</span><br><span class="line">print(a[<span class="number">0</span>:])</span><br></pre></td></tr></table></figure>
-<h3 id="常规操作"><a href="#常规操作" class="headerlink" title="常规操作"></a>常规操作</h3><p>1.连接</p>
+<h3 id="常规操作"><a class="markdownIt-Anchor" href="#常规操作"></a> 常规操作</h3>
+<p>1.连接</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">"abc"</span></span><br><span class="line">b=<span class="string">"cde"</span></span><br><span class="line">print(a+b)</span><br></pre></td></tr></table></figure>
 <p>2.重复</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">"abc"</span></span><br><span class="line">print(<span class="number">3</span>*a)</span><br></pre></td></tr></table></figure>
@@ -476,23 +512,56 @@
 <p>5.字符编码</p>
 <p>强制使用中文：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*- coding:UTF-8 -*-</span></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br></pre></td></tr></table></figure>
+<p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=input()</span><br><span class="line">print(eval(a))			<span class="comment">#将字符串作为数值表达式</span></span><br><span class="line">print(eval(str(<span class="number">1</span>+<span class="number">2</span>)))	<span class="comment">#将数值转换为字符串</span></span><br></pre></td></tr></table></figure>
-<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>1.不固定长度，可以删减<br>2.成员类型不限制<br>3.可以嵌套列表</p>
+<h2 id="list"><a class="markdownIt-Anchor" href="#list"></a> List</h2>
+<h3 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=[]</span><br><span class="line">b=[NONE]*<span class="number">100</span></span><br><span class="line">c=[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">100</span>)]</span><br></pre></td></tr></table></figure>
+<h3 id="特点"><a class="markdownIt-Anchor" href="#特点"></a> 特点</h3>
+<p>1.不固定长度，可以删减<br>
+2.成员类型不限制<br>
+3.可以嵌套列表</p>
 <p>注：与vector类似</p>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>1.访问</p>
+<h3 id="用法"><a class="markdownIt-Anchor" href="#用法"></a> 用法</h3>
+<p>1.访问</p>
 <p>类比字符串，可以正序反序访问,取子列表</p>
+<p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>,<span class="string">"a"</span>]</span><br><span class="line">print(a[<span class="number">0</span>])</span><br><span class="line">print(a[<span class="number">-1</span>])</span><br><span class="line">print(a[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure>
 <p>2.运算</p>
 <p>支持加法(拼接)和乘法(重复)操作</p>
+<p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">b=[<span class="number">3</span>]</span><br><span class="line">c=a+b</span><br><span class="line">d=a*<span class="number">3</span></span><br><span class="line">print(c)</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
 <p>3.常用函数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">a.append(<span class="number">3</span>)		<span class="comment">#添加元素在末尾</span></span><br><span class="line">a.insert(<span class="number">1</span>,<span class="number">4</span>)	<span class="comment">#在指定位置插入元素</span></span><br><span class="line">print(a.pop())	<span class="comment">#弹出元素，并从列表中删除(可以指定位置)</span></span><br><span class="line">a.remove(x)		<span class="comment">#删除元素x(第一个匹配的）</span></span><br><span class="line">a.sort()		<span class="comment">#排序，默认从小到大(只能排int)</span></span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-<h2 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h2><p>和list基本相同，不能增删改成员</p>
-<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p>注：类似于C++中map，但是在没有建立映射关系时不可访问所对应键值！</p>
+<h2 id="tuple"><a class="markdownIt-Anchor" href="#tuple"></a> tuple</h2>
+<p>和list基本相同，不能增删改成员</p>
+<h2 id="字典"><a class="markdownIt-Anchor" href="#字典"></a> 字典</h2>
+<p>注：类似于C++中map，但是在没有建立映射关系时不可访问所对应键值！</p>
 <p>可以嵌套</p>
+<p>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=&#123;<span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">2</span>,<span class="string">"c"</span>:<span class="number">3</span>&#125;</span><br><span class="line">a[<span class="string">"a"</span>]=<span class="number">3</span>			<span class="comment">#支持修改操作</span></span><br><span class="line"><span class="keyword">del</span>(a[<span class="string">"b"</span>])			<span class="comment">#删除对应键值对</span></span><br><span class="line">a[<span class="string">"b"</span>]=<span class="number">1</span>			<span class="comment">#增加新的键值对</span></span><br><span class="line">print(a[<span class="string">"a"</span>])		<span class="comment">#输出键值</span></span><br><span class="line">print(a)			<span class="comment">#输出字典(按照键值添加的顺序)</span></span><br></pre></td></tr></table></figure>
-<h1 id="模块化编程"><a href="#模块化编程" class="headerlink" title="模块化编程"></a>模块化编程</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>官方定义：完成特定功能的语句组</p>
-<p><del>实际：对重复次数过多的某个功能进行的封装，以及为了程序主提简洁性将一些功能外放</del></p>
+<h1 id="模块化编程"><a class="markdownIt-Anchor" href="#模块化编程"></a> 模块化编程</h1>
+<h2 id="函数"><a class="markdownIt-Anchor" href="#函数"></a> 函数</h2>
+<p>官方定义：完成特定功能的语句组</p>
+<p><s>实际：对重复次数过多的某个功能进行的封装，以及为了程序主提简洁性将一些功能外放</s></p>
+<h3 id="基本操作-2"><a class="markdownIt-Anchor" href="#基本操作-2"></a> 基本操作</h3>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">orz</span><span class="params">(name)</span>:</span></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">		print(<span class="string">"orz %s!"</span>%name)</span><br><span class="line">orz(<span class="string">"Somebody"</span>)</span><br></pre></td></tr></table></figure>
+<p>传进去的参数为局部变量，在函数内部可以任意修改，赋值，对全局无影响，用return返回函数计算出的值</p>
+<p>可以跨文件调用</p>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> circle</span><br><span class="line">print(circle.aera(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="命名规则"><a class="markdownIt-Anchor" href="#命名规则"></a> 命名规则</h3>
+<p>必须以下划线和字母开头，函数名区分大小写</p>
+<p>Python提供的函数为内键函数，自己定义的函数不可以和内键函数重名，也不可以是保留字(如list，int)。</p>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">p=<span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cul</span><span class="params">(x)</span>:</span></span><br><span class="line">	<span class="keyword">global</span> p</span><br><span class="line">	p+=<span class="number">1</span></span><br><span class="line">	<span class="keyword">return</span> x**p</span><br><span class="line">print(cul(<span class="number">2</span>))</span><br><span class="line">print(p)</span><br></pre></td></tr></table></figure>
+<h3 id="递归调用"><a class="markdownIt-Anchor" href="#递归调用"></a> 递归调用</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cul</span><span class="params">(x)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> (x==<span class="number">1</span>):</span><br><span class="line">		<span class="keyword">return</span> x</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">return</span> x*cul(x<span class="number">-1</span>)</span><br><span class="line">print(cul(<span class="number">10</span>))		<span class="comment">#计算10！</span></span><br></pre></td></tr></table></figure>
+<p>递归最大深度：2955层</p>
+<h2 id="模块"><a class="markdownIt-Anchor" href="#模块"></a> 模块</h2>
+<p>保存在外存储器的文件称为一个模块，可以被调用</p>
+<p>import 模块名 进行调用</p>
 
       
     </div>
@@ -585,10 +654,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -609,7 +678,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">80</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
               
@@ -824,7 +893,7 @@
                       
                     
                     <span class="site-state-item-count">100</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">schlagwörter</span>
                   
                 </div>
               
@@ -887,7 +956,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IO流"><span class="nav-number">1.</span> <span class="nav-text">IO流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入及处理"><span class="nav-number">1.1.</span> <span class="nav-text">输入及处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出及处理"><span class="nav-number">1.2.</span> <span class="nav-text">输出及处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式参数"><span class="nav-number">1.2.2.</span> <span class="nav-text">格式参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整参数"><span class="nav-number">1.2.3.</span> <span class="nav-text">完整参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#库文件"><span class="nav-number">2.</span> <span class="nav-text">库文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#调用方法"><span class="nav-number">2.1.</span> <span class="nav-text">调用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用库及函数表及用法"><span class="nav-number">2.2.</span> <span class="nav-text">常用库及函数表及用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计结构"><span class="nav-number">3.</span> <span class="nav-text">设计结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序结构"><span class="nav-number">3.1.</span> <span class="nav-text">顺序结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择结构"><span class="nav-number">3.2.</span> <span class="nav-text">选择结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔值"><span class="nav-number">3.2.1.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if语句"><span class="nav-number">3.2.2.</span> <span class="nav-text">if语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环结构"><span class="nav-number">3.3.</span> <span class="nav-text">循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for循环"><span class="nav-number">3.3.1.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while循环"><span class="nav-number">3.3.2.</span> <span class="nav-text">while循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">4.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">4.1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规操作"><span class="nav-number">4.1.1.</span> <span class="nav-text">常规操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">4.2.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">4.2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">4.2.2.</span> <span class="nav-text">用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tuple"><span class="nav-number">4.3.</span> <span class="nav-text">tuple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">4.4.</span> <span class="nav-text">字典</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块化编程"><span class="nav-number">5.</span> <span class="nav-text">模块化编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">5.1.</span> <span class="nav-text">函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#io流"><span class="nav-number">1.</span> <span class="nav-text"> IO流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入及处理"><span class="nav-number">1.1.</span> <span class="nav-text"> 输入及处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出及处理"><span class="nav-number">1.2.</span> <span class="nav-text"> 输出及处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式参数"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 格式参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整参数"><span class="nav-number">1.2.3.</span> <span class="nav-text"> 完整参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#库文件"><span class="nav-number">2.</span> <span class="nav-text"> 库文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#调用方法"><span class="nav-number">2.1.</span> <span class="nav-text"> 调用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用库及函数表及用法"><span class="nav-number">2.2.</span> <span class="nav-text"> 常用库及函数表及用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计结构"><span class="nav-number">3.</span> <span class="nav-text"> 设计结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序结构"><span class="nav-number">3.1.</span> <span class="nav-text"> 顺序结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择结构"><span class="nav-number">3.2.</span> <span class="nav-text"> 选择结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔值"><span class="nav-number">3.2.1.</span> <span class="nav-text"> 布尔值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if语句"><span class="nav-number">3.2.2.</span> <span class="nav-text"> if语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环结构"><span class="nav-number">3.3.</span> <span class="nav-text"> 循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for循环"><span class="nav-number">3.3.1.</span> <span class="nav-text"> for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while循环"><span class="nav-number">3.3.2.</span> <span class="nav-text"> while循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">4.</span> <span class="nav-text"> 数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">4.1.</span> <span class="nav-text"> 字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规操作"><span class="nav-number">4.1.1.</span> <span class="nav-text"> 常规操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">4.2.</span> <span class="nav-text"> List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">4.2.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">4.2.2.</span> <span class="nav-text"> 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">4.2.3.</span> <span class="nav-text"> 用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tuple"><span class="nav-number">4.3.</span> <span class="nav-text"> tuple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">4.4.</span> <span class="nav-text"> 字典</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块化编程"><span class="nav-number">5.</span> <span class="nav-text"> 模块化编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">5.1.</span> <span class="nav-text"> 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作-2"><span class="nav-number">5.1.1.</span> <span class="nav-text"> 基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名规则"><span class="nav-number">5.1.2.</span> <span class="nav-text"> 命名规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归调用"><span class="nav-number">5.1.3.</span> <span class="nav-text"> 递归调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">5.2.</span> <span class="nav-text"> 模块</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -920,7 +989,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -928,7 +997,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.1</div>
+  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.1</div>
 
 
 
